@@ -327,14 +327,14 @@ title=#2,#1}
 	
 	\begin{latin}
 		
-	user login --username <username> --password <password>
+	user login -{}-username <username> -{}-password <password>
 		
 	\end{latin}
 	
 \end{mybox}
 
 در چنین مواردی که شامل پارامتر‌هایی هستند که با
-\lr{--}
+\lr{-{}-}
 یعنی دو کاراکتر دش، مشخص شده‌اند، باید بتوانیم از دستور با هر ترتیبی استفاده کنیم. یعنی دستور زیر
 
 \begin{mybox}[colback=yellow]{دستور}
@@ -342,7 +342,7 @@ title=#2,#1}
 	
 	\begin{latin}
 		
-		user login --password <password> --username <username> 
+		user login -{}-password <password> -{}-username <username> 
 		
 	\end{latin}
 	
@@ -490,7 +490,8 @@ title=#2,#1}
 \textbf{ساخت کاربر جدید:}
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
-		user create --username <username> --nickname <nickname> --password 
+		user create -{}-username <username> -{}-nickname <nickname> 
+		-{}-password 
 		<password>
 	\end{latin}
 \end{mybox}
@@ -519,7 +520,7 @@ title=#2,#1}
 \textbf{ورود کاربر:}
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
-		user login --username <username> --password <password>
+		user login -{}-username <username> -{}-password <password>
 	\end{latin}
 \end{mybox}
 پیغام موفقیت:
@@ -603,7 +604,7 @@ title=#2,#1}
 \textbf{تغییر نام مستعار:}
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
-		profile change --nickname <nickname>
+		profile change -{}-nickname <nickname>
 	\end{latin}
 \end{mybox}
 پیغام موفقیت:
@@ -623,7 +624,7 @@ title=#2,#1}
 \textbf{تغییر رمز عبور:}
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
-		profile change --password --current <current password> --new <new 
+		profile change -{}-password -{}-current <current password> -{}-new <new 
 		password>
 	\end{latin}
 \end{mybox}
@@ -776,10 +777,12 @@ Deck}):}}
 \textbf{اضافه کردن کارت به دک:}
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
-		deck add-card --card <card name> --deck <deck name> --side(optional)
+		deck add-card -{}-card <card name> -{}-deck <deck name> 
+		-{}-side(optional)
 	\end{latin}
 \end{mybox}
-توجه کنید که تنها برای اضافه کردن کارت به \lr{side deck} از پرچم \lr{side--} 
+توجه کنید که تنها برای اضافه کردن کارت به \lr{side deck} از پرچم \lr{side-
+{}-} 
 استفاده می‌کنیم. اگر از آن استفاده نکینم، به معنی اضافه شدن به دک اصلی است.
 \\
 پیغام موفقیت:
@@ -819,10 +822,11 @@ Deck}):}}
 \textbf{حذف کارت از دک:}
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
-		deck rm-card --card <card name> --deck <deck name> --side(optional)
+		deck rm-card -{}-card <card name> -{}-deck <deck name> 
+		-{}-side(optional)
 	\end{latin}
 \end{mybox}
-توجه کنید که تنها برای حذف کردن کارت از side deck از پرچم side-- استفاده 
+توجه کنید که تنها برای حذف کردن کارت از side deck از پرچم side-{}- استفاده 
 می‌کنیم.
 \\
 توجه: زمانی که یک کارت از دک حذف می‌شود، به موجودی کارت‌های بازیکن برمی‌گردد.
@@ -851,7 +855,7 @@ Deck}):}}
 \textbf{نمایش دک‌های بازیکن:}
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
-		deck show --all
+		deck show -{}-all
 	\end{latin}
 \end{mybox}
 خروجی باید با فرمت زیر باشد:
@@ -897,10 +901,10 @@ Deck}):}}
 \textbf{نمایش یک دک:}
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
-		deck show --deck-name <deck name> --side(Opt)
+		deck show -{}-deck-name <deck name> -{}-side(Opt)
 	\end{latin}
 \end{mybox}
-توجه: برای نمایش دک فرعی از پرچم \lr{side--} استفاده می‌کنیم.
+توجه: برای نمایش دک فرعی از پرچم \lr{side-{}-} استفاده می‌کنیم.
 \\
 خروجی:
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
@@ -951,7 +955,7 @@ Deck}):}}
 برای نمایش کارت‌های موجود در \lr{shop} دستور زیر را به کار ببرید.
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
-		shop show --all
+		shop show -{}-all
 	\end{latin}
 \end{mybox}
 خروجی دستور بالا به شکل زیر است:
@@ -968,7 +972,7 @@ Deck}):}}
 در ابتدا از منوی اصلی باید به منوی بازی برویم با دستور
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
-		duel new --second-player <player2 username> --rounds <1/3>
+		duel new -{}-second-player <player2 username> -{}-rounds <1/3>
 	\end{latin}
 \end{mybox}
     در صورتی که بازیکن \lr{player 2} وجود نداشت پیام
@@ -995,6 +999,440 @@ Deck}):}}
 \end{mybox}
     بعد از این دستور در صورت عدم وجود خطا بازی ای با \lr{deck} فعال هر 
     بازیکن ساخته میشود و وارد بازی می‌شویم.
+\subsubsection*{{\titr نمایش صفحه بازی}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent نمایش صفحه بازی}}
+بعد از انجام هر دستوری و هر حرکتی وقتی به منوی اصلی بازی رفتیم باید برد 
+بازی به صورت زیر نمایش داده شود:
+
+\vspace{.5cm}
+\textbf{نکات کلی نمایش صفحه:}
+\\
+برد بازی باید به گونه‌ای نمایش داده شود نوبت هر بازیکنی باشد فیلد خود در سمت 
+پایین نمایش داده شود. یعنی بعد از تغییر نوبت برد بازی باید قرینه نسبت به 
+نقطه مرکز بازی شود یا دوران 180 درجه صفحه.
+\\
+هنگام نمایش صفحه در این فاز فقط لازم است تعداد کارت‌ها در بخش های مختلف زمین 
+مثل \lr{graveyard} نمایش داده شود به همراه تعداد کارت‌هایی که در دست حریف 
+است 
+به همراه کارت‌های روی \lr{field} بازی، و برای کارت‌های \lr{field} بازی نیازی 
+به نمایش خود کارت‌ها نیست و به روشی که نشان می‌دهیم فقط نوع قرارگیری کارت‌ها 
+را نمایش می‌دهیم.
+\\
+برای انتخاب یا نمایش کارت‌های هر قسمت از صفحه بازی که بعدا با دستور های آن 
+آشنا می شویم نیاز به آشنایی به مختصات و اسم هر قسمت از بخش‌های صفحه بازی 
+داریم:
+\begin{itemize}
+	\item گورستان کارت ها(\lr{graveyard}):
+	\\
+	با عبارت \lr{graveyard} به \lr{graveyard} خود و \lr{graveyard -{}-opponen}t 
+	به \lr{graveyard} حریف اشاره کند.
+	\item قسمت کارت های هیولا(\lr{monster card zone}):
+	\\
+	همانطور که می‌دانید هر بخش 5 کارت دارد. شماره‌گذاری صفحه به صورت زیر است. 
+	از این سیستم شماره گذاری برای دستور \lr{select} بعدا به طور کامل آن را 
+	توضیح 
+	می‌دهیم استفاده می‌شوند.
+	\\
+	برای شماره گذاری کارت‌های monster زمین خود به صورت زیر عمل می‌کنیم:
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=.5\paperwidth]{./Resources/CardsNumbering.png}
+		\caption{شماره گذاری کارت‌های \lr{monster} زمین خود}
+		\label{}
+	\end{figure}
+	مثلا کارتی که در جایگاه 2 است را به صورت زیر صدا می‌زنیم.
+	\begin{mybox}[colback=yellow]{ورودی نمونه}
+		\begin{latin}	
+			select -{}-monster 2
+		\end{latin}
+	\end{mybox}
+	و چون کارت‌های زمین حریف 180 درجه دوران یافته‌اند شماره‌گذاری آنها به صورت 
+	زیر است:
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=.5\paperwidth]{./Resources/CardsNumbering_1.png}
+		\caption{شماره گذاری کارت‌های \lr{monster} زمین حریف}
+		\label{}
+	\end{figure}
+	برای مثال برای سمت راست‌ترین کارت باید
+	\begin{mybox}[colback=yellow]{ورودی نمونه}
+		\begin{latin}	
+			select -{}-monster 5 -{}-opponent 
+		\end{latin}
+	\end{mybox}
+	را صدا بزنیم.
+	 \item قسمت کارت‌های جادو و تله (\lr{spell and trap card zone})
+	 \\
+	 نام‌گذاری کارت‌های این بخش مانند بخش بالا است با یک تفاوت که به جای 
+	 \lr{monster-{}-} باید از \lr{spell-{}-} استفاده کرد. (مثلا:  \lr{select -
+	 {}-
+	 spell 1})
+	 
+	 \item بخش دسته کارت‌ها (\lr{deck zone})
+	 \\
+	 که کارت‌های \lr{deck} در آنجا قرار می‌گیرند و در نمایش فقط تعداد آنها 
+	 نمایش داده می‌شوند.
+	 \item بخش میدان (\lr{field zone})
+	 \\
+	 که حداکثر یک کارت در آن قرار میگیرد و برای صدا زدن \lr{field zone} خود 
+	 یا حریف از 2 دستور \lr{select -{}-field} یا 
+	 \lr{select -{}-field -{}-opponent} 
+	 استفاده می‌کنیم.
+\end{itemize}
+
+\vspace{.5cm}
+\textbf{چگونگی نمایش برد:}
+در این قسمت چگونگی نمایش کل برد بازی به همراه کارت های درون هر بخش و یک 
+مثال و را توضیح می‌دهیم.
+\\
+برد بازی بعد از اتمام هر عملیات به شکل زیر نمایش داده می‌شود:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		TODO: google doc page 17 text here
+	\end{latin}
+\end{mybox}
+(توجه شود که تمام فواصل بالا تب [\lr{tab}] هستند)  
+\\
+در بخش بالا کارت‌های آبی مربوط به بازیکنی است که در آن لحظه نوبت اوست که با 
+تغییر \lr{turn} بازی نیز باید 180 درجه بچرخد و عوض شود.
+\\
+در بخش بالا به جای \lr{GY} باید تعداد کارت های درون \lr{graveyard} را نمایش 
+دهند.
+\\
+به جای \lr{FZ} اگر در آن قسمت کارتی بود \lr{O} به معنای \lr{Occupied} و اگر 
+کارتی نبود \lr{E} به معنای \lr{Empty} را نمایش دهند.
+\\
+در بخش هیولا یا همان \lr{monster card zone} که در بالا یک مثال از آن می‌بینید به 
+ازای هر جایگاهی که خالی است \lr{E} و هر جایگاهی که کارت در آن در حالت دفاعی 
+(\lr{defensive}) قرار گرفته و برای حریف دیده می‌شود \lr{DO} به معنی
+ \lr{defensive occupied} و اگر برای حریف دیده نمی‌شود یا همان \lr{set} شده است 
+ \lr{DH} 
+ به معنی \lr{defensive hidden} است. و کارتی که \lr{summon} شده و در حالت حمله 
+ است \lr{OO} به 
+ معنی \lr{offensive occupied} است.
+\\
+در بخش تله و جادو (\lr{spell and trap}) به ازای هر کارتی که برای حریف نمایش 
+داده می‌شود \lr{O} و هر کارتی که نمایش داده نمی شود \lr{H} بزارید.
+\\
+در نمایش برد بازی به جای \lr{DN} باید تعداد کارت های باقی مانده در 
+\lr{deck}. دوباره تکرار می‌شود که در صفحه‌ی بازی‌، صفحه‌ی دشمن 180 درجه دوران 
+یافته و ترتیب کارت ها در هر \lr{Zone} برعکس شده است.
+
+\subsubsection*{{\titr مرور قوانین بازی}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent مرور قوانین بازی}}
+\lr{TODO: Soroush Miazane :D}
+
+\subsubsection*{{\titr انتخاب یک کارت}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent انتخاب یک کارت}}
+برای انتخاب یک کارت چه از بین کارت‌های خود و کارت های حریف دستورات زیر را 
+تعریف می کنیم و بعدا کارهایی که بعد از انتخاب هر کارت می‌توان انجام داد را 
+معرفی می‌کنیم.
+\\
+ابتدا بدانید که بعد از انجام هر دستور مثل \lr{attack} یا \lr{set} یا 
+\lr{summon} همانطور که صفحه بازی نمایش داده شده و \lr{update} می شود باید 
+کارت \lr{select} شده از حالت \lr{Select} خارج شود.
+\\
+دستور \lr{select} به صورت زیر انجام می شود:
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		select <card address>
+	\end{latin}
+\end{mybox}
+و آدرس کارت‌ها همانطور که در قسمت نکات کلی نمایش صفحه به آن اشاره کردیم را 
+به طور کامل توضیح می‌دهیم.
+\begin{itemize}
+	\item
+	آدرس کارت‌هایی که در \lr{monster zone} خود بازیکن هستند به صورت
+	 \lr{select -{}-monster <number>}
+	  است. که \lr{number} ها در بخش های بالاتر داک توضیح داده شده اند.
+	\item
+	آدرس کارت‌هایی که در \lr{spell and trap card zone} هستند به صورت
+	 \lr{--spell <number>}
+	 است. 
+	\item
+	آدرس کارت هایی که در \lr{monster zone} بازیکن حریف هستند (\lr{select} 
+	کردن آنها بیشتر برای دیدن اطلاعات آنهاست و کاربرد آن مانند کارت های 
+	خود 
+	بازیکن زیاد نیست) به صورت \lr{--monster --opponent <number>} است.
+	\item
+	آدرس کارت هایی که در \lr{spell card zone} حریف هستند به صورت
+	 \lr{--spell --opponent <number>}
+	  است.
+	\item
+	آدرس کارتی که در قسمت \lr{field zone} بازیکن است به صورت \lr{field--} 
+	است.
+	\item
+	آدرس کارتی که در قسمت \lr{field zone} حریف است به صورت
+	 \lr{--field --opponent}
+	  است.
+	\item
+	آدرس کارتی که در \lr{hand} خود بازیکن است (که طبق قانون حداکثر 6 کارت 
+	نیز هستند) به صورت 
+	\lr{select --hand <number>}
+	 است که \lr{number} در کارت‌های درون دست در هنگام نمایش برای خود از چپ به 
+	 راست شماره گذاری می شوند. البته که نیاز به نمایش شماره نیست و از 
+	 شماره فقط 
+	 برای عملیات انتخاب کردن استفاده می‌شود.
+	 \item
+	 همانطور که معلوم است نیازی به انتخاب و آدرس‌دهی کارتی که در دست بازیکن 
+	 حریف است نداریم؛ زیرا هیچ وقت برای بازیکن دیگر قابل نمایش نیست.	
+\end{itemize}
+در صورتی که آدرس داده شده \lr{invalid} بود مثلا هیچ یک از حالات بالا نبود یا 
+شماره آن نامعتبر بود یا عدد بعد از \lr{my hand} بیش‌تر از کارت‌های درون دست 
+فرد بود پیام زیر چاپ شود:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		Invalid selection
+	\end{latin}
+\end{mybox}
+در غیر این صورت در دستور \lr{select} اگر در آدرسی که ذکر کردیم کارتی وجود 
+داشت پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		card selected
+	\end{latin}
+\end{mybox}
+چاپ شود و در صورتی که در آن خانه کارتی وجود نداشت پیام 
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		no card found in the given position
+	\end{latin}
+\end{mybox}
+چاپ شود.
+\\
+در صورت موفق بودن دستور \lr{select} آن کارت انتخاب شده می‌ماند و بعدا می 
+توانیم دستورهایی را اجرا کنیم که که آن‌ها را توضیح می دهیم.
+\\
+برای پاک‌کردن انتخاب خود از دستور 
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		select -d
+	\end{latin}
+\end{mybox}
+استفاده می‌کنیم. بعد از اجرای این دستور اگر کارتی انتخاب شده نبود پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		no card is selected yet
+	\end{latin}
+\end{mybox}
+و در غیر این صورت
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		card deselected
+	\end{latin}
+\end{mybox}
+چاپ شود.
+
+\subsubsection*{{\titr تغییر فاز های نوبت و دستور \lr{next phase}}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent تغییر فاز های نوبت و 
+دستور \lr{next phase}}}
+همانطور که می دانید بازی از 6 فاز
+ \lr{draw phase} ، \lr{stand by phase} ، \lr{main phase 1} ، \lr{battle phase} و 
+ \lr{main phase 2} و \lr{end phase }
+ تشکیل شده است.
+\\
+    در ابتدا لازم به ذکر است که بعد از ورود به هر فاز جدید پیام زیر چاپ شود:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		Phase: <phase name>
+	\end{latin}
+\end{mybox}
+    در هر فاز که بودیم با دستور \lr{next phase} به فاز بعدی بازی می رویم.
+
+\vspace{.5cm}
+\textbf{فاز کارت گرفتن (\lr{draw phase}):}
+در این فاز ابتدا کارت بالای دک را به دست بازیکنی که نوبت اوست اضافه می کند و 
+آن را در آخرین جایگاه کارت های آن فرد می گذارد و این پیام را چاپ می‌کند:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		new card added to the hand : <card name>
+	\end{latin}
+\end{mybox}
+البته همانطور که در قوانین بازی ذکر شده اگر کارت‌های دک فرد تمام شده باشند و 
+نتواند کارتی بردارد بازنده اعلام می‌شود و پیام باخت او نمایش داده می‌شود و 
+بازی تمام می‌شود.
+
+\vspace{.5cm}
+\textbf{فاز آماده باش (\lr{standby phase}):}
+
+\vspace{.5cm}
+\textbf{فاز اصلی اول (\lr{Main Phase 1}):}
+در این فاز. ابتدا صفحه بازی نمایش داده می‌شود که در مورد چگونگی آن توضیحات 
+لازم را دادیم و بعد از هر دستور دوباره برد بازی نمایش داده می شود. 
+\lr{Action}‌ های مربوط به این فاز در ادامه توضیح داده خواهد شد.
+
+\vspace{.5cm}
+\textbf{فاز پایانی (\lr{End Phase}):}
+    در این فاز علاوه بر نمایش متن اسم فاز که برای همه ی فازها نام بردیم پیام 
+    زیر چاپ می‌شود. 
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+	    its <next player nickname>’s turn
+	\end{latin}
+\end{mybox}
+
+\subsubsection*{{\titr احضار یک کارت هیولا}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent احضار یک کارت هیولا}}
+    بعد از اجرای دستور
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		summon 
+	\end{latin}
+\end{mybox}
+اگر کارتی انتخاب نشده باشد و کارت انتخاب شده(\lr{selected}) نداشته باشیم 
+پیام زیر چاپ شود:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		no card is selected yet
+	\end{latin}
+\end{mybox}
+و در غیر این صورت اگر کارتی که انتخاب شده است در دست بازیکن نباشد یا 
+\lr{monster} مد نظر قابلیت احضار عادی را نداشته باشد یا کارت انتخاب شده 
+اصلا 
+\lr{monster} نباشد پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		you can’t summon this card
+	\end{latin}
+\end{mybox}
+نمایش داده می‌شود. همچنین  در صورتی که در فاز اصلی 1 یا 2 نباشیم، پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		action not allowed in this phase
+	\end{latin}
+\end{mybox}
+نمایش داده می‌شود. همچنین اگر هر 5 خانه \lr{monster card zone} پر باشند دستور
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		monster card zone is full
+	\end{latin}
+\end{mybox}
+را نمایش می‌دهیم. و اما در صورتی که در این نوبت (\lr{turn}) قبلا یک کارت  
+\lr{summon} یا \lr{set} کرده باشد و نتواند دیگر کارتی \lr{summon} کند دستور
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		you already summoned/set on this turn
+	\end{latin}
+\end{mybox}
+اگر سطح (\lr{level}) هیولایی که قصد احضار آن را داریم کمتر مساوی 4 بود آن 
+کارت \lr{summon} شده به صورت کامل احضار کرده و آن کارت را به اولین خانه‌ای 
+در 
+\lr{monster card zone} که خالی (\lr{Empty}) است ببرید. طبعا نوع قرار گیری در 
+آن خانه نیز \lr{OO} است. منظور از اولین خانه، براساس شماره خانه روی صفحه 
+بازی است. و پیغام 
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		summoned successfully
+	\end{latin}
+\end{mybox}
+را چاپ کنید و اگر سطح آن هیولا 5 یا 6 بود اگر هیچ کارتی روی زمین برای 
+\lr{tribute} کردن وجود نداشت پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		there are not enough cards for tribute
+	\end{latin}
+\end{mybox}
+را نمایش داده و در صورت وجود از کاربر یک عدد که نشان دهنده‌ی آدرس کارتی است 
+میخواهیم آن را \lr{tribute} کنیم است و در صورتی که در آن خانه هیولایی وجود 
+نداشت پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		there no monsters one this address		
+	\end{latin}
+\end{mybox}
+چاپ شود و در صورت موفقیت پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		summoned successfully 
+	\end{latin}
+\end{mybox}
+را نمایش دهید و آن کارت \lr{tribute} شده را از زمین برداشته و سپس کارت 
+انتخاب شده را بر روی اولین خانه‌ای که \lr{empty} است قرار دهید.
+\\
+و اگر سطح آن هیولا 7 یا 8 بود اگر حداقل 2 کارت هیولا روی زمین قرار نداشت پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		there are not enough cards for tribute
+	\end{latin}
+\end{mybox}
+را نمایش دهید و در غیر این صورت 2 عدد از کاربر گرفته که نشان دهنده‌ی آدرس آن 
+کارت‌هایی است که می‌خواهیم آنها رو \lr{tribute} کنیم و در صورتی که در حداقل 
+یکی از آن 2 خانه هیچ هیولایی وجود نداشت پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		there no monsters on one of this addresses
+	\end{latin}
+\end{mybox}
+چاپ شود و در صورت موفقیت پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		summoned successfully
+	\end{latin}
+\end{mybox}
+را نمایش دهید و کارت های روی زمین را برداشته و آن کارت انتخاب شده را 
+\lr{summon} کنید.
+
+\subsubsection*{{\titr به کمین گذاشتن یک کارت هیولا (\lr{Set})}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent به کمین گذاشتن یک کارت 
+هیولا (\lr{Set})}}
+    بعد از اجرای دستور
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		Set
+	\end{latin}
+\end{mybox}
+اگر کارتی انتخاب نشده باشد و کارت انتخاب شده (\lr{selected}) نداشته باشیم 
+پیام زیر چاپ شود:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		no card is selected yet
+	\end{latin}
+\end{mybox}
+و در غیر این صورت اگر کارتی که انتخاب شده است در دست (\lr{hand}) بازیکن 
+نباشد، پیام زیر چاپ می‌شود:
+
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		you can’t set this card
+	\end{latin}
+\end{mybox}
+در غیر این صورت اگر این کارت \lr{monster} باشد (\lr{trap} و \lr{spell} را 
+بعدا توضیح می دهیم) و در صورتی که در فاز اصلی 1 یا 2 نباشد پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		you can’t do this action in this phase
+	\end{latin}
+\end{mybox}
+نمایش داده شود و اما اگر هر 5 خانه ی \lr{monster card zone} پر باشند دستور
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		monster card zone is full
+	\end{latin}
+\end{mybox}
+را نمایش دهید و اما در صورتی که در این نوبت (\lr{turn}) قبلا یک کارت 
+\lr{summon} یا \lr{set} کرده باشد و نتواند دیگر کارتی \lr{summon} کند دستور
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		you already summoned/set on this turn
+	\end{latin}
+\end{mybox}
+را نمایش دهید و در آخر اگر \lr{set} کردن او به صورت کامل انجام شد آن کارت را 
+به اولین (از لحاظ شماره ی آن خانه) خانه‌ای در \lr{monster card zone} که خالی 
+(\lr{Empty}) است ببرید (طبعا نوع قرار گیری در آن خانه نیز \lr{DH} است) و 
+دستور
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		set successfully
+	\end{latin}
+\end{mybox}
+را نمایش دهید.
+
+\subsubsection*{{\titr تغییر حالت حمله ای به دفاعی یک هیولا و برعکس 
+(\lr{change monster card position})}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent تغییر حالت حمله ای به 
+دفاعی یک هیولا و برعکس (\lr{change monster card position})}}
+
+
 
 \subsection*{{\titr هوش مصنوعی}}
 \addcontentsline{toc}{subsection}{{\fehrestContent هوش مصنوعی}}
