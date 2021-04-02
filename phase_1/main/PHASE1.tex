@@ -2230,15 +2230,76 @@ card})}}
 قطعا می‌دانید که هیولاها جز مهمی از این بازی هستند، در این جا می‌خواهیم یک سری 
 از هیولا ها با ویژگی‌های آن‌ها را به شما معرفی کنیم:
 
+
+\tcbset{skin=bicolor,colback=LightGreen,colframe=DarkGreen,
+	colbacklower=LimeGreen!75!LightGreen,
+	width=1\textwidth,before=,after=\hfill,equal height group=bicolg,
+	left=1mm,right=1mm,top=1mm,bottom=1mm,middle=1mm , valign lower=center , valign=center , varwidth boxed title=center , halign lower=center , halign title=center , halign upper=center}
+
+
+
+
+
+
+
+
+\newcommand{\spell}[5]{
+	\begin{tcolorbox}[adjusted title=\lr{#1}]
+		\includegraphics[width = 40mm]{#2}
+		
+		جادو یا تله: #3
+		
+		نوع: #4
+		
+		\tcblower
+		
+		#5
+		
+	\end{tcolorbox}
+	
+}
+
+
+\newcommand{\monster}[7]{
+	\begin{tcolorbox}[adjusted title=\lr{#1}]
+		\includegraphics[width = 40mm]{#2}
+		
+		نوع هیولا: \lr{#3} \quad سطح: {#4}
+		
+		قدرت حمله: #5 \quad قدرت دفاع: #6
+		\tcblower
+		
+		#7
+		
+	\end{tcolorbox}
+	
+}
+
+
+
+
+
 \subsubsection*{{\titr کارت‌های هیولا}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent کارت‌های هیولا}}
+
+\monster{Command knight}{Resources/monsters/CK.png}{Effect}{4}{1000}{1000}{
+	این هیولا یک \lr{continuous effect monster} است که هنگامی که در زمین به صورت آشکار و face up قرار گرفته باشد به قدرت حمله‌ی همه ی کارت‌هایی که روی زمین قرار گرفته‌اند 400 واحد اضافه می‌کند و تا زمانی که کارت هیولای دیگری در زمین باشد نمی‌توان به این کارت حمله کرد(اگر \lr{effect} اش در حال اجرا باشد)
+	
+}
 
 \subsubsection*{{\titr کارت های \lr{Spell} و \lr{Trap}}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent کارت های \lr{Spell} و 
 \lr{Trap}}}
 
+\spell{Monster Reborn}{Resources/spells/MR.png}{جادو}{عادی - محدود}{
+	با این کارت شما می‌توانید یک از هیولاها را از گورستان خود یا حریف انتخاب کنید و آن را به صورت احضار ویژه به بازی برگردانید.
+}
+
 \subsubsection*{{\titr کارت‌های تله}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent کارت‌های تله}}
+
+
+
 
 
 \end{document}
