@@ -917,10 +917,84 @@ Deck}):}}
 
 \subsection*{{\titr فروشگاه}}
 \addcontentsline{toc}{subsection}{{\fehrestContent فروشگاه}}
+در این قسمت باید فروشگاه را پیاده‌سازی کنید.
+\\
+همانطور که از اسمش مشخص است باید بازیکنان در این قسمت بتوانند کارت مورد نظر 
+خود را خریداری کنند.
+\\
+هر کارت یک قیمتی دارد که برای خریداری آن باید پرداخت شود. قیمت ها نیز بر 
+اساس قدرت هر کارت تعیین شده است.
+\\
+قیمت هر کارت در فایل اکسل موجود است.
+\\
+در فروشگاه باید لیست تمام کارت ها موجود باشد و کاربر می تواند با دستور زیر، 
+کارت مورد نظر را خریداری کند.
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		shop Buy <card name>
+	\end{latin}
+\end{mybox}
+اگر کاربر  نام اشتباهی را وارد کرده بود پیغام زیر را چاپ کنید:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		There is no card with this name
+	\end{latin}
+\end{mybox}
+اگر کاربر سکه کافی برای خرید کارت را نداشت پیغام زیر را چاپ کنید:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		Not enough money
+	\end{latin}
+\end{mybox}
+توجه داشته باشید که هیچ محدودیتی در خرید تعداد زیادی کارت یکسان ندارید.
+\\
+برای نمایش کارت‌های موجود در \lr{shop} دستور زیر را به کار ببرید.
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		shop show --all
+	\end{latin}
+\end{mybox}
+خروجی دستور بالا به شکل زیر است:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		<card name>:<card description>
+	\end{latin}
+\end{mybox}
+که ترتیب نمایش کارت‌ها بر اساس ترتیب الفبایی نام‌هایشان است.
 
-\subsection*{{\titr گیم‌پلی بازی}}
-\addcontentsline{toc}{subsection}{{\fehrestContent گیم‌پلی بازی}}
-
+\subsection*{{\titr گیم پلی بازی (قسمت اصلی انجام بازی)}}
+\addcontentsline{toc}{subsection}{{\fehrestContent گیم پلی بازی (قسمت اصلی 
+انجام بازی)}}
+در ابتدا از منوی اصلی باید به منوی بازی برویم با دستور
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		duel new --second-player <player2 username> --rounds <1/3>
+	\end{latin}
+\end{mybox}
+    در صورتی که بازیکن \lr{player 2} وجود نداشت پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		There is no player with this username
+	\end{latin}
+\end{mybox}
+    چاپ شود و در صورتی که هر یک از بازیکنان دک فعال نداشتند پیغام خطای زیر 
+    چاپ شود:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		<username> has no active deck
+	\end{latin}
+\end{mybox}
+    که در ابتدا بازیکن اصلی که درخواست بازی کرده است بررسی می‌شود و بعد 
+    بازیکنی که از آن درخواست شده.
+\\
+    در صورتی هم که دک فعال آنها غیرمجاز بود دستور زیر چاپ شود:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		<username>’s deck is invalid
+	\end{latin}
+\end{mybox}
+    بعد از این دستور در صورت عدم وجود خطا بازی ای با \lr{deck} فعال هر 
+    بازیکن ساخته میشود و وارد بازی می‌شویم.
 
 \subsection*{{\titr هوش مصنوعی}}
 \addcontentsline{toc}{subsection}{{\fehrestContent هوش مصنوعی}}
