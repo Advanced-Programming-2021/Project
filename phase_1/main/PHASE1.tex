@@ -1431,10 +1431,110 @@ Deck}):}}
 (\lr{change monster card position})}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent تغییر حالت حمله ای به 
 دفاعی یک هیولا و برعکس (\lr{change monster card position})}}
+    با دستور
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		change to attack position
+	\end{latin}
+\end{mybox}
+حالت یک کارتی که \lr{DO} است به یک کارت \lr{OO} تبدیل می‌شود.
+\\
+و با دستور
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+	    change to defense position
+	\end{latin}
+\end{mybox}
+    حالت یک کارتی که \lr{OO} است به \lr{DO} تبدیل می‌شود.
+    اگر کارتی انتخاب نشده باشد و کارت انتخاب شده (\lr{selected}) نداشته 
+    باشیم پیام زیر چاپ شود:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		no card is selected yet
+	\end{latin}
+\end{mybox}
+و در غیر این صورت اگر کارتی که انتخاب شده است در دست قسمت
+ \lr{monster card zone }
+ نباشد پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+\begin{latin}	
+	you can’t change this card position
+\end{latin}
+\end{mybox}
+نمایش داده شود و در صورتی که در فاز اصلی 1 یا 2 یا همان \lr{main phase} 
+نباشد پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		you can’t do this action in this phase
+	\end{latin}
+\end{mybox}
+اگر دستور \lr{change to attack} برای کارتی جز کارتی که حالت آن \lr{DO} است و 
+\lr{change to defense} برای کارتی که حالت آن جز \lr{OO} است صدا زده شود باید 
+پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+	    this card is already in the wanted position		
+	\end{latin}
+\end{mybox}
+نمایش داده شود و در صورتی که در این \lr{turn} یکبار \lr{position} این کارت 
+تغییر کرده باشد نمی‌توان دیگر آن را تغییر داد و پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		you already changed this card position in this turn		
+	\end{latin}
+\end{mybox}
+نمایش داده شود. در صورت موفقیت پیام زیر چاپ شود و حالت هیولا عوض شود:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		monster card position changed successfully
+	\end{latin}
+\end{mybox}
 
 \subsubsection*{{\titr احضار چرخشی(\lr{flip summon})}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent احضار چرخشی(\lr{flip 
 summon})}}
+این نوع احضار فقط برای چرخش کارت‌هایی که به صورت \lr{DH} بر روی
+ \lr{monster card zone} قرار گرفته‌اند است و با دستور زیر انجام می‌شود:
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+	    flip summon	
+	\end{latin}
+\end{mybox}
+    اگر کارتی انتخاب نشده باشد و کارت انتخاب شده (\lr{selected}) نداشته 
+    باشیم پیام زیر چاپ شود
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		no card is selected yet
+	\end{latin}
+\end{mybox}
+و در غیر این صورت اگر کارتی که انتخاب شده است  در قسمت \lr{monster card zone} 
+نباشد پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		you can’t change this card position	
+	\end{latin}
+\end{mybox}
+نمایش داده شود و در صورتی که در فاز اصلی 1 یا 2 یا همان \lr{main phase} 
+نباشد پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		you can’t do this action in this phase	
+	\end{latin}
+\end{mybox}
+چاپ شود و در غیر این صورت اگر کارت انتخاب شده در حالت \lr{DH} نباشد یا در 
+همین دور تازه روی زمین گذاشته شده باشد پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+	    you can’t flip summon this card
+	\end{latin}
+\end{mybox}
+    چاپ شود. در غیر این صورت کارت به حالت \lr{OO} در بیاید و پیام زیر چاپ 
+    شود:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+	    flip summoned successfully		
+	\end{latin}
+\end{mybox}
 
 \subsubsection*{{\titr حمله کردن یک کارت هیولا به یک هیولا ی دشمن (\lr{attack 
 monster})
@@ -1442,16 +1542,239 @@ monster})
 \addcontentsline{toc}{subsubsection}{{\fehrestContent حمله کردن یک کارت هیولا 
 به یک هیولا ی دشمن (\lr{attack monster})
 }}
+    با دستور
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+	    attack <number>	
+	\end{latin}
+\end{mybox}
+که در آن \lr{number} عددی بین 1 تا 5 است کارت انتخاب شده به \lr{monster} ای 
+که در خانه ی \lr{number} قسمت کارت های هیولا (\lr{monster card zone}) دشمن 
+است 
+حمله می‌کند. (در صورت ارور ندادن)
+\\
+    اگر کارتی انتخاب نشده باشد و کارت انتخاب شده(selected) نداشته باشیم پیام 
+    زیر چاپ شود
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		no card is selected yet
+	\end{latin}
+\end{mybox}
+و در غیر این صورت اگر کارتی که انتخاب شده است در دست قسمت
+ \lr{monster card zone }نباشد پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		you can’t attack with this card
+	\end{latin}
+\end{mybox}
+نمایش داده شود و در صورتی که در فاز حمله یا همان \lr{battle phase} نباشد 
+پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		you can’t do this action in this phase
+	\end{latin}
+\end{mybox}
+نمایش داده شود و در غیر این صورت در صورتی که این کارت قبلا در این نوبت حمله 
+کرده باشد پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		this card already attacked
+	\end{latin}
+\end{mybox}
+نمایش داده شود و در غیر این صورت در صورتی که در آن خانه ی دشمن کارتی وجود 
+نداشته باشد دستور
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		there is no card to attack here	
+	\end{latin}
+\end{mybox}
+و در غیر این صورت حمله با موفقیت شکل می‌گیرد. حال بر حسب حالت‌های متفاوت 
+پیام‌های درست را چاپ می‌کنیم و عمل \lr{attack} را اتجام می‌دهیم.
+
+\begin{itemize}
+	\item
+	اگر به کارتی از حریف که حالت \lr{OO} (حمله‌ای) داشت حمله کرد؛ اگر قدرت 
+	حمله‌ی کارت بازیکن بیشتر از  کارت \lr{monster} حریف بود \lr{LP} حریف کم 
+	شده و 
+	آن کارت حریف به \lr{graveyard} می‌رود. همچنین پیام زیر چاپ می‌شود:
+	\begin{mybox}[colback=yellow]{پیغام به کاربر}
+		\begin{latin}	
+			your opponent’s monster is destroyed and your opponent receives 
+			<damage> battle damage	
+		\end{latin}
+	\end{mybox}
+	        که damage همان اختلاف قدرت حمله‌ی 2 کارت است.
+	
+	\item
+	اگر به کارتی از حریف که حالت \lr{OO} (حمله ای) دارد که قدرت حمله ی برابر 
+	با کارت انتخاب شده دارد حمله کند پیام زیر چاپ شده و هر 2 کارت نابود 
+	شوند:
+	\begin{mybox}[colback=yellow]{پیغام به کاربر}
+		\begin{latin}	
+		    both you and your opponent monster cards are destroyed and no one 
+		    receives damage	
+		\end{latin}
+	\end{mybox}
+
+	\item
+اگر به کارتی از حریف که حالت \lr{OO} (حمله ای) داشت حمله کرد اگر قدرت حمله ی 
+کارت بازیکن کمتر از  کارت \lr{monster} حریف بود \lr{LP} بازیکن کم شده و 
+کارت 
+بازیکن به \lr{graveyard} می رود و پیام زیر چاپ می‌شود:
+	\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		    Your monster card is destroyed and you received <damage> battle 
+		    damage
+	\end{latin}
+	\end{mybox}
+
+	\item
+اگر به کارتی از حریف که در حالت \lr{DO} بود حمله کرد؛ اگر قدرت دفاع آن کارت 
+حریف کمتر از قدرت حمله ی کارت انتخاب شده‌ی بازیکن بود پیام زیر چاپ شود و آن 
+کارت نابود شود:
+	\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+	    the defense position monster is destroyed	
+	\end{latin}
+	\end{mybox}
+
+	\item
+اگر به کارتی از حریف که در حالت \lr{DO} بود حمله کرد؛ اگر قدرت دفاع آن کارت 
+حریف برابر قدرت حمله‌ی کارت انتخاب شده‌ی بازیکن بود، اتفاقی نیفتاده و پیام 
+زیر چاپ می‌شود:
+	\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+	    no card is destroyed	
+	\end{latin}
+	\end{mybox}
+
+	\item
+اگر به کارتی از حریف که در حالت \lr{DO} بود حمله کرد؛ اگر قدرت دفاع آن کارت 
+حریف بیشتر از قدرت حمله‌ی کارت انتخاب شده ی بازیکن بود پیام زیر چاپ شود و 
+از 
+\lr{LP} بازیکن کم شود:
+	\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+	    no card is destroyed and you received <damage> battle damage	
+	\end{latin}
+	\end{mybox}
+
+	\item
+	در صورتی که به یک کارت \lr{DH} حمله شود قوانین چاپ آن مانند حالت‌های 
+	\lr{DO} است فقط با یک تفاوت که این بار نام آن کارت را در خط قبل چاپ کند 
+	مثلا 
+	اگر \lr{attack} کارت بازیکن برابر \lr{defense} کارت حریف بود پیام
+	\begin{mybox}[colback=yellow]{پیغام به کاربر}
+		\begin{latin}	
+			opponent’s monster card was <monster card name> and no card is 
+			destroyed
+		\end{latin}
+	\end{mybox}
+	چاپ می‌شود.
+\end{itemize}
 
 \subsubsection*{{\titr حمله کردن مستقیم یک کارت هیولا به دشمن (\lr{direct 
 attack})}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent حمله کردن مستقیم یک کارت 
 هیولا به دشمن \lr{(direct attack})}}
+با دستور
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		attack direct
+	\end{latin}
+\end{mybox}
+    در صورت موفقیت آمیز بودن دستور، به طور مستقیم به دشمن حمله می کند و از 
+    \lr{LP} او کم می‌کند.
+\\
+اگر کارتی انتخاب نشده باشد و کارت انتخاب شده(\lr{selected}) نداشته باشیم 
+پیام زیر چاپ شود
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		no card is selected yet
+	\end{latin}
+\end{mybox}
+و در غیر این صورت اگر کارتی که انتخاب شده است در قسمت \lr{monster card zone }
+نباشد پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		you can’t attack with this card
+	\end{latin}
+\end{mybox}
+نمایش داده شود و در صورتی که در فاز حمله یا همان \lr{battle phase} نباشد 
+پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		you can’t do this action in this phase
+	\end{latin}
+\end{mybox}
+نمایش داده شود و در غیر این صورت در صورتی که این کارت قبلا در این نوبت حمله 
+کرده باشد پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		this card already attacked	
+	\end{latin}
+\end{mybox}
+نمایش داده شود و در غیر این صورت به طور موفقیت‌آمیز حمله رخ می‌دهد و از جان 
+حریف کاسته می‌شود و پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		you opponent receives <damage> battale damage	
+	\end{latin}
+\end{mybox}
+نمایش داده می‌شود.
 
 \subsubsection*{{\titr فعال کردن یک کارت جادو(\lr{activate a spell card})}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent فعال کردن یک کارت 
 جادو(\lr{activate a spell card})}}
+با دستور
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+	    activate effect	
+	\end{latin}
+\end{mybox}
+اگر کارت انتخاب شده یک \lr{spell} باشد که قبلا \lr{activate} نشده باشد انجام 
+می‌شود
+\\
+    اگر کارتی انتخاب نشده باشد و کارت انتخاب شده (\lr{selected}) نداشته 
+    باشیم پیام زیر چاپ شود:
 
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		no card is selected yet
+	\end{latin}
+\end{mybox}
+و در غیر این صورت اگر کارتی که انتخاب شده است \lr{spell} نباشد پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		Activate effect is only for spell cards.	
+	\end{latin}
+\end{mybox}
+نمایش داده شود و در صورتی که در فاز اصلی یا همان main phase نباشد پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+\begin{latin}	
+	
+\end{latin}
+\end{mybox}
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+\begin{latin}	
+	
+\end{latin}
+\end{mybox}
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+\begin{latin}	
+	
+\end{latin}
+\end{mybox}
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+\begin{latin}	
+	
+\end{latin}
+\end{mybox}
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+\begin{latin}	
+	
+\end{latin}
+\end{mybox}
 
 \subsubsection*{{\titr به کمین گذاشتن یک جادو (\lr{set a spell}):}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent به کمین گذاشتن یک جادو 
