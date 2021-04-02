@@ -2301,10 +2301,17 @@ card})}}
 	بدون توضیحات اضافه
 }
 
+\monster {Yomi Ship}{Resources/monsters/YS.png}{Aqua}{3}{800}{1400}{
+	وقتی یک هیولا بهش حمله کند و نابودش کند، خود همان هیولا نیز می شود.
+}
 
 
 \monster{Silver Fang}{Resources/monsters/SF.jpg}{Beast}{3}{1200}{800}{
 	بدون توضیحات اضافه
+}
+
+\monster{Suijin}{Resources/monsters/suijin.png}{Aqua}{7}{2500}{2400}{
+	وقتی این کارت رو است، فقط برای یک بار می توانید اگر یک هیولا به این کارت حمله کرده، حمله آن هیولا را فقط برای همان دفعه صفر کنید. 
 }
 
 
@@ -2322,7 +2329,7 @@ card})}}
 	بدون توضیحات اضافه
 }
 
-\monster{Dark Magician}{Resources/monsters/FI.png}{Spellcaster}{7}{2500}{2100}{
+\monster{Dark Magician}{Resources/monsters/DM.jpg}{Spellcaster}{7}{2500}{2100}{
 	بدون توضیحات اضافه
 }
 
@@ -2355,6 +2362,14 @@ card})}}
 	بدون توضیحات اضافه
 }
 
+\monster{Crab Turtle}{Resources/monsters/crab.png}{Beast-Warrior}{7}{2550}{2500}{
+	قابل فراخوانی با کارت مخصوص فراخوانی آیینی (Ritual)
+}
+
+\monster{Skull Guardian}{Resources/monsters/Skull.jpg}{Warrior}{7}{2050}{2500}{
+	قابل فراخوانی با کارت مخصوص فراخوانی آیینی (Ritual)
+}
+
 \monster{Slot Machine}{Resources/monsters/sm.png}{Machine}{7}{2000}{2300}{
 	بدون توضیحات اضافه
 }
@@ -2365,7 +2380,16 @@ card})}}
 }
 
 \monster{Man-Eater Bug}{Resources/monsters/MEB.jpg}{Insect}{2}{450}{600}{
-	بدون توضیحات اضافه
+	موقعی که برگردد می تواند یکی از هیولا های حریف را نابود کند
+}
+
+
+\monster{Gate Guardian}{Resources/monsters/GG.jpg}{Insect}{2}{3750}{3400}{
+	موقعی که برگردد می تواند یکی از هیولا های حریف را نابود کند
+}
+
+\monster{Scanner}{Resources/monsters/Scanner.png}{Machine}{1}{?}{?}{
+یک بار به ازای هر نوبت می تواند تبدیل بشود به یکی از کارت های حریف که از بازی خارج شده است. در این حالحمله و دفاع و اسم و تمامی خاصیت‌های این شخصیت تا آخر آن نوبت با کارت انتخاب شده حریف یکی می‌شود.
 }
 
 \monster{Bitron}{Resources/monsters/Bitron.png}{Cyberse}{2}{200}{2000}{
@@ -2470,6 +2494,128 @@ card})}}
 
 \spell{Monster Reborn}{Resources/spells/MR.png}{جادو}{عادی - محدود}{
 	با این کارت شما می‌توانید یک از هیولاها را از گورستان خود یا حریف انتخاب کنید و آن را به صورت احضار ویژه به بازی برگردانید.
+}
+
+
+\spell{Terraforming}{Resources/spells/T.png}{جادو}{عادی - محدود}{
+یک عدد کارت Field Spell  از دکی که در اختیار دارید، به دست خود اضافه کنید.
+}
+
+\spell{Pot of Greed}{Resources/spells/POG.png}{جادو}{عادی - محدود}{
+	 عدد کارت جدید از دک وارد دست خود بکنید.
+}
+
+\spell{Pot of Greed}{Resources/spells/POG.png}{جادو}{عادی - محدود}{
+	2 عدد کارت جدید از دک وارد دست خود بکنید.
+}
+
+\spell{Raigeki}{Resources/spells/R.png}{جادو}{عادی - محدود}{
+	تمام هیولاهایی که حریفتان کنترل می کند را نابود کنید.
+}
+
+
+\spell{Change of Heart}{Resources/spells/coh.png}{جادو}{عادی - محدود}{
+یکی از هیولاهایی که حریفتان کنترل میکند را مورد هدف قرار دهید، تا انتهای این فاز از بازی آن را به کنترل خود درآورید.
+}
+
+
+
+\spell{Harpie's Feather Duster}{Resources/spells/hf.png}{جادو}{عادی - محدود}{
+	تمام کارت ‌ای اسپل و ترپ که حریفتان کنترل می کند را نابود کنید.
+}
+
+
+
+\spell{Swords of Revealing Light}{Resources/spells/sor.png}{جادو}{عادی - نامحدود}{
+	پس از آنکه این کارت را فعال کردید، در زمین بازی باقی خواهد ماند اما باید آن را در پایان مرحله ی سوم نوبت حریف نابود کند. زمانی که این کارت فعال می شود:
+	
+	اگر حریف شما هیولا رو به پایینی را کنترل می کند، باید تمام این کارت ها را به حالت رو به بالا تغییر دهید. تا زمانی که این کارت رو به بالا در زمین بازی قرار دارد، کارت هیولای حریف نمی تواند اعلام حمله کند.
+	
+}
+
+
+
+\spell{Dark Hole}{Resources/spells/DH.png}{جادو}{عادی - نامحدود}{
+تمام کارت‌های هیولا موجود در زمین بازی را نابود کنید.
+}
+
+
+
+\spell{Supply Squad}{Resources/spells/SS.png}{جادو}{عادی - نامحدود}{
+	اگر هیولا (هیولاهایی) که شما کنترل می کنید در جنگ یا در اثر استفاده شدن یک کارت دیگر نابود شده‌اند، می توانید یکبار در هر نوبت خود یک کارت جدید از دک وارد دست خود بکنید..
+}
+
+
+\spell{Spell Absorption}{Resources/spells/sa.png}{جادو}{عادی - نامحدود}{
+هر زمانی که یک کارت اسپل فعال سازی شده است،  به محض  resolve  شدن آن 500 LP دریافت کنید.
+}
+
+
+
+\spell{Messenger of peace}{Resources/spells/mop.png}{جادو}{Continuous  - نامحدود}{
+هیولا هایی که ATK معادل 1500 یا بیشتر را دارند نمی توانند اقدام به حمله کنند. یکبار در هر نوبت از بازی، در طول فاز \lr{Standby}  به میزان $100$ واحد از LP خود را  بپردازید یا این کارت را نابود کنید.
+}
+
+
+
+\spell{Twin Twisters}{Resources/spells/tt.png}{جادو}{\lr{Quick Play} - نامحدود}{
+یکی از کارت ها را دور بریزید؛ سپس حداکثر 2 کارت اسپل یا ترپ موجود در زمین بازی را مورد هدف قرار دهید و نابودشان کنید.
+}
+
+
+
+\spell{Mystical space typhoon}{Resources/spells/ms.png}{جادو}{\lr{Quick Play} - نامحدود}{
+یک کارت اسپل یا ترپ موجود در زمین بازی را مورد هدف قرار داده و سپس نابودش کنید.
+}
+
+\spell{Ring of Defense}{Resources/spells/rod.png}{جادو}{\lr{Quick Play} - نامحدود}{
+	هرگاه یک کارت ترپ فعال شده که اثر تخریب کننده دارد، آن اثر را 0 کنید.
+}
+
+\spell{Yami}{Resources/spells/Y.png}{جادو}{\lr{Field} - نامحدود}{
+تمام  هیولاها ی موجود در زمین بازی که از نوع  Fiend  و  Spellcaster  هستند، 200 ATK/DEF  دریافت میکنند؛ همچنین تمام هیولا های  از نوع   Fairy که در زمین بازی قرار دارند، 200 ATK/Def  از دست می دهند.
+}
+
+\spell{Forest}{Resources/spells/F.png}{جادو}{\lr{Field} - نامحدود}{
+تمام  هیولاهای موجود در زمین بازی که از نوع  Insect/Beast/Beast-Worrior  هستند، 200 ATK/Def  دریافت می‌کنند.
+}
+
+
+\spell{Closed Forest}{Resources/spells/CF.png}{جادو}{\lr{Field} - نامحدود}{
+تمام  هیولاهای Beast-Type  که خودتان کنترل می کنید، به ازای هر هیولای موجود در گورستان،  100 واحد ATK  دریافت می کنند.
+}
+
+\spell{UMIIRUKA}{Resources/spells/U.png}{جادو}{\lr{Field} - نامحدود}{
+	برای تمام کارت های هیولا از نوع  Aqua به میزان 500 امتیاز به ATK اضافه کرده و 400 امتیاز از DEF کم کنید.
+}
+
+\spell{Sword of Dark Destruction}{Resources/spells/sd.png}{جادو}{\lr{Equip} - نامحدود}{
+	کارت های هیولای مجهز شده (equipped) به این کارت که از نوع Fiend باشند، 400 واحد ATK دریافت می‌کنند و 200 واحد از DEF آن‌ها کم می‌شود.
+}
+
+\spell{Black Pendant}{Resources/spells/bp.png}{جادو}{\lr{Equip} - نامحدود}{
+کارت های هیولای مجهز شده (equipped) به این کارت، 500 واحد ATK دریافت می‌کنند.
+}
+
+\spell{United We Stand}{Resources/spells/uws.png}{جادو}{\lr{Equip} - نامحدود}{
+کارت های هیولای مجهز شده (equipped) به این کارت، به ازای هر هیولایی که توسط شما کنترل می شود و در زمین بازی به صورت رو به بالا قرار گرفته است 800 واحد ATK/DEF دریافت می کنند. 
+}
+
+\spell{Magnum Shield}{Resources/spells/ms.png}{جادو}{\lr{Equip} - نامحدود}{
+فقط هیولا هایی از نوع Warrior  را مجهز می کند. تاثیر این کارت با توجه به حالت قرار گرفتن کارت هیولای مورد نظر در زمین بازی است:
+
+کارت هیولا در حالت حمله باشد:  آن کارت دقیقا معادل مقدار DEF، امتیاز ATK دریافت می کند.
+
+کارت هیولا در حالت دفاع باشد:  آن کارت دقیقا معادل مقدار ATK، امتیاز DEF دریافت می کند.
+
+}
+
+\spell{Advanced Ritual Art}{Resources/spells/ARA.png}{جادو}{\lr{Ritual} - نامحدود}{
+با این کارت می‌توانید یک هیولای آیینی (\lr{Ritual Monster}) را احضار آیینی (\lr{Ritual Summon}) کنید.
+
+شما باید تعدادی کارت‌های هیولا از نوع Normal در زمیین انتخاب کنید که مجموع سطحشان برابر با سطح کارت هیولای Ritual قصد احضارش را دارید باشد. سپس این کارت‌هارا از به Graveyard بفرستید و هیولای آیینی مد نظر را احضار کنید.
+
+	
 }
 
 \subsubsection*{{\titr کارت‌های تله}}
