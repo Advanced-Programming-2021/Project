@@ -1147,28 +1147,28 @@ Deck}):}}
 	  است. که \lr{number} ها در بخش های بالاتر داک توضیح داده شده اند.
 	\item
 	آدرس کارت‌هایی که در \lr{spell and trap card zone} هستند به صورت
-	 \lr{--spell <number>}
+	 \lr{-{}-spell <number>}
 	 است. 
 	\item
 	آدرس کارت هایی که در \lr{monster zone} بازیکن حریف هستند (\lr{select} 
 	کردن آنها بیشتر برای دیدن اطلاعات آنهاست و کاربرد آن مانند کارت های 
 	خود 
-	بازیکن زیاد نیست) به صورت \lr{--monster --opponent <number>} است.
+	بازیکن زیاد نیست) به صورت \lr{-{}-monster -{}-opponent <number>} است.
 	\item
 	آدرس کارت هایی که در \lr{spell card zone} حریف هستند به صورت
-	 \lr{--spell --opponent <number>}
+	 \lr{-{}-spell -{}-opponent <number>}
 	  است.
 	\item
-	آدرس کارتی که در قسمت \lr{field zone} بازیکن است به صورت \lr{field--} 
+	آدرس کارتی که در قسمت \lr{field zone} بازیکن است به صورت \lr{field-{}-} 
 	است.
 	\item
 	آدرس کارتی که در قسمت \lr{field zone} حریف است به صورت
-	 \lr{--field --opponent}
+	 \lr{-{}-field -{}-opponent}
 	  است.
 	\item
 	آدرس کارتی که در \lr{hand} خود بازیکن است (که طبق قانون حداکثر 6 کارت 
 	نیز هستند) به صورت 
-	\lr{select --hand <number>}
+	\lr{select -{}-hand <number>}
 	 است که \lr{number} در کارت‌های درون دست در هنگام نمایش برای خود از چپ به 
 	 راست شماره گذاری می شوند. البته که نیاز به نمایش شماره نیست و از 
 	 شماره فقط 
@@ -1787,7 +1787,8 @@ attack})}}
 شود. در صورتی که کارت مربوط به \lr{Field Zone} باشد، به \lr{field zone} می 
 رود. اگر کارتی از قبل در \lr{field zone} وجود داشته باشد، کارت قبلی به 
 \lr{graveyard} برفته و کارت جدید به \lr{field zone} می‌رود. و \lr{activate} 
-می‌شود. نوع قرارگیری چنین کارتی \lr{O} است. یعنی به طور کامل توسط دو طرف دیده 
+می‌شود. نوع قرارگیری چنین کارتی \lr{O} است. یعنی به طور کامل توسط دو طرف 
+دیده 
 می‌شود.
 \\
 (در مورد چگونگی اعمال \lr{spell} ها و پیام مربوط به کاری که انجام دادند بعدا 
@@ -1901,46 +1902,333 @@ attack})}}
 نوبت حریف برقرار شد یا کارت \lr{quick spell} رد زمین حریف \lr{set} شده باشد 
 باید همانجا نوبت به بازیکن حریف داده شود و پیام زیر چاپ شود و حتی برد بازی 
 دوباره چاپ شود.
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		now it will be <another player username>’s turn \\
+		<show board>
+	\end{latin}
+\end{mybox}
+و پیغام زیر چاپ شود
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+	    do you want to activate your trap and spell?
+	\end{latin}
+\end{mybox}
+در صورتی که جواب \lr{no} باشد دوباره به نوبت خود بازیکن برگردد و پیام 
+
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		now it will be <the player username>’s turn \\
+		<show board>
+	\end{latin}
+\end{mybox}
+نمایش داده شود و بازی ادامه پیدا کند و در صورتی که \lr{yes}
+چاپ شد در آن نوبت فقط حرکت های مربوط به فعال کردن یک \lr{spell} یا \lr{trap} 
+مجاز است (که شرایط آن برقرار شده است و به طبع آن کارت روی زمین بوده) و در 
+هر حرکت و دستور دیگری انجام شد پیغام زیر چاپ شود.
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		it’s not your turn to play this kind of moves
+	\end{latin}
+\end{mybox}
+و در صورت دیگر که دستور \lr{activate} مربوط به آن کارت (کارت‌ها) صدا زده شد 
+خروجی 
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		spell/trap activated
+	\end{latin}
+\end{mybox}
+چاپ شود.
 
 \subsubsection*{{\titr احضار آیینی:/ (\lr{Ritual Summon})}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent احضار آیینی:/ (\lr{Ritual 
 Summon})}}
-
+در ابتدا به این نکته اشاره کنم که هنگام فعال کردن یک \lr{ritual spell} اگر 
+هیچ \lr{ritual} کارتی در دست برای وارد کردن به بازی وجود نداشت یا مجموع 
+سطوح 
+هیچ زیر مجموعه‌ای از کارت‌های زمین با سطح یک کارت \lr{ritual monster} ای که 
+در 
+دست قرار دارد برابر نمی‌شد پیغام خطای زیر به جای پیغام موفقیت در فعال شدن 
+جادوی آن کارت نمایش داده شود و کارت همچنان به شکل فعال نشده باقی بماند.
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		there is no way you could ritual summon a monster
+	\end{latin}
+\end{mybox}
+در صورت فعال شدن یک \lr{ritual spell} یا به هر طریقی که یک \lr{ritual summon} 
+صورت بگیرد، تا زمانی که کارت مربوطه به درستی روی زمین قرار داده نشده، اگر 
+هر دستور دیگری وارد شود، باید پیام زیر نوشته شود:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+	    you should ritual summon right now	
+	\end{latin}
+\end{mybox}
+و در صورتی که کارت درست (\lr{ritual monster}) انتخاب شد و دستور \lr{summon} 
+زده شد باید از کاربر آدرس کارت‌هایی که قرار است برای ورود \lr{Ritual} قربانی 
+شوند، پرسیده شود. اگر سطح آن‌ کارت‌ها متناسب با کارتی که قرار است وارد زمین 
+بشود نبود، باید پیام خطای زیر چاپ شود:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		selected monsters levels don’t match with ritual monster
+	\end{latin}
+\end{mybox}
+و دوباره منتظر انتخاب ترتیب درستی از کارت‌ها باشیم. در مورد \lr{Cancel} کردن 
+کل این بخش در قسمت مربوطه توضیح داده شده است.
+\\
+در صورت درست بودن \lr{ritual summon} ابتدا حالت آن کارت (\lr{attacking} یا 
+\lr{defensive}) بودن آن پرسیده شده و به یکی از 2 حالت \lr{OO} یا \lr{DO} 
+گذاشته می‌شود و سپس پیام:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+	    summoned successfully	
+	\end{latin}
+\end{mybox}
+    نمایش داده شود و کارهای مربوطه انجام شود.
 
 \subsubsection*{{\titr احضار خاص (\lr{Special Summon})}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent احضار خاص (\lr{Special 
 Summon})}}
-
+بعضی از کارت ها ی \lr{monster effect} یا کارت های دیگر ویژگی دارند که میتوان 
+با فعال کردن آنها \lr{special summon} انجام داد و یک هیولای دیگر را در آن 
+دست 
+\lr{summon} کرد. در صورتی که کارت هیولایی در دست بازیکن وجود نداشت، امکان 
+فعالسازی آن \lr{spell} وجود نخواهد داشت و پیام 
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		there is no way you could special summon a monster
+	\end{latin}
+\end{mybox}
+چاپ می‌شود.
+\\
+مانند بخش \lr{ritual summon} بعد از فعال کردن آن کارت باید حتما یک هیولا 
+\lr{summon} شود و دستورات دیگر انجام نمی‌شوند و در صورت نوشتن دستورات دیگر 
+پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		you should special summon right now
+	\end{latin}
+\end{mybox}
+نوشته شود.
 
 \subsubsection*{{\titr نشان دادن گورستان(\lr{show graveyard})}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent نشان دادن 
 گورستان(\lr{show graveyard})}}
-
+با دستور 
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		show graveyard
+	\end{latin}
+\end{mybox}
+لیست تمامی کارت‌های درون \lr{graveyard} نوشته می‌شود و طریقه‌ی نمایش آن هم به 
+صورت زیر است:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		1. card name: <cardname>\\
+		2. card name: <cardname>\\
+		...
+	\end{latin}
+\end{mybox}
+ترتیب نمایش کارت‌ها از قدیمی‌ترین کارت ارسال  است. در صورت خالی بودن گورستان 
+پیغام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		graveyard empty
+	\end{latin}
+\end{mybox}
+نمایش داده شود. با دستور
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		back
+	\end{latin}
+\end{mybox}
+به بازی باز می‌گردیم.
 
 \subsubsection*{{\titr نمایش یک کارت(\lr{view a card})}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent نمایش یک کارت(\lr{view a 
 card})}}
+با دستور 
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		view <selected/number>
+	\end{latin}
+\end{mybox}
+    در صورتی که گزینه‌ی \lr{selected} انتخاب شود اگر کارتی \lr{select} نشده 
+    بود پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		no card is selected yet
+	\end{latin}
+\end{mybox}
+نمایش داده شود و در صورتی که کارتی انتخاب شده بود اطلاعات آن کارت که در بخش 
+های قبل گیم‌پلی گفتیم به همان فرمت نمایش داده شود.
+\\
+و اگر درون دستور \lr{show graveyard} بودیم و آن لیست را نشان می‌دادیم با 
+انتخاب شماره‌ی آن کارت در لیست اطلاعات آن کارت نمایش داده می‌شود. برای 
+کارتهای 
+\lr{graveyard} دستور \lr{select} نداریم و فقط امکان \lr{view} کردن آن‌ها وجود 
+دارد. ضمنا تنها زمانی می‌توان از این دستور استفاده کرد که در وضعیت \lr{show} 
+باشیم و هرجای دیگری \lr{view <number>} آمد پیام   
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		invalid command 
+	\end{latin}
+\end{mybox}
+نمایش داده می‌شود. همچنین اگر این دستور معتبر بود ولی شماره داده شده معتبر 
+نبود پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+	    invalid number	
+	\end{latin}
+\end{mybox}
+نمایش داده می‌شود. در صورت درست بودن اطلاعات کارت نمایش داده شود.
 
 
 \subsubsection*{{\titr زنجیر (\lr{Chain})}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent زنجیر (\lr{Chain})}}
-
+با زنجیر در مقررات بازی آشنا شدید در تمام دستورات بالا اگر باعث شد که نوبت 
+به حریف برود و زنجیری فعال کند آن \lr{action} را انجام نمی‌دهید و پیام 
+مربوطه 
+را انجام نمی دهید و در صورت اتمام زنجیر به صورت برعکس \lr{action} های 
+مربوطه 
+را انجام می‌دهید.
 
 \subsubsection*{{\titr نکات کلی}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent نکات کلی}}
-
-
-
+دقت کنید در هر کدام از دستوراتی که در چند مرحله از کاربر ورودی گرفته می‌شود 
+با زدن دستور \lr{cancel} کل دستور متوقف می‌شود. (مثلا شماره خانه‌ها برای 
+\lr{tribute summon})
+\\
+    هر زمان دستور 
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+	    surrender 	
+	\end{latin}
+\end{mybox}
+به عنوان ورودی قرار گرفت بازیکن، از آن بازی انصراف داده و بازنده می‌شود. و 
+طبق قوانین \lr{win} و \lr{lose} و پیغام‌های آن که می‌گوییم یک باخت برای 
+بازیکن 
+تسلیم شده ثبت می‌شود.
+\\
+    در صورتی که فردی برنده بازی شد:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		<username> won the game and the score is:  <score1>-<score2>
+	\end{latin}
+\end{mybox}
+نمایش داده شود و در صورتی که بازیکنی کل \lr{match} (متشکل از چند بازی پشت سر 
+هم) را برد علاوه بر پیام بالا پیام زیر نیز نمایش داده شود:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		<username> won the whole match with score: <score1>-<score2>
+	\end{latin}
+\end{mybox}
 
 \subsection*{{\titr هوش مصنوعی}}
 \addcontentsline{toc}{subsection}{{\fehrestContent هوش مصنوعی}}
+یک ویژگی مهم بازی‌های رایانه‌ای، استفاده از هوش مصنوعی در آن‌هاست. این بازی هم 
+از این قاعده مستثنی نیست و برای آن به یک هوش مصنوعی نیاز داریم؛ البته 
+لزومی 
+ندارد که این هوش مصنوعی پیچیده و پیشرفته باشد و کافیست یک هوش مصنوعی بسیار 
+ساده و حداقلی پیاده‌سازی کنید که توانایی انجام بازی را داشته باشد و در هر 
+نوبت، اگر امکانش وجود داشت کارتی را به زمین بازی اضافه کند و با کارت‌های 
+زمین، حرکات مناسب را انجام دهد.
+\\
+یک استراتژی پیشنهادی برای پیاده‌سازی هوش مصنوعی در زیر آمده است اما 
+پیاده‌سازی آن اجباری نیست و صرفا به عنوان یک پیشنهاد است. شما می‌توانید این 
+استراتژی را بهبود دهید و استراتژی‌های خودتان را پیاده سازی کنید تا هوش 
+مصنوعی قدرتمند‌تری داشته باشید! 
+\\
+توجه کنید که در زمان تحویل پروژه، به هوش‌های مصنوعی خوب نمره امتیازی تعلق 
+خواهد گرفت.
+\\
+استراتژی پیشنهادی:
+\begin{itemize}
+	\item 
+	هر کارت تله را در صورت امکان به زمین اضافه کند.
+	
+	\item
+	هر کارت تله یا اسپل که قابلیت اجرایی دارد را به شرطی که به نفعش باشد و 
+	یا ضرر نکند اجرا کند.
+	\begin{itemize}
+		\item این که چه زمانی این حرکت به نفعش است را از دیدگاه‌های گوناگون 
+		می‌توان بررسی کرد. به عنوان مثال می‌توانید این که مقدار علامت‌دار اختلاف 
+		امتیاز 
+		کارت‌هایش و کارت‌های حریف بیشتر شود را نفع در نظر بگیرید؛ به شرط 
+		این‌که با 
+		فعال‌سازی آن کارت، نبازد.
+		\item
+		در صورت نیاز به فعال کردن تله در نوبت حریف هم به این بند توجه شود.
+	\end{itemize}
+
+	\item
+	همیشه از میان هیولا‌ها، آن را که امتیاز بیشتری دارد و توان احضارش را دارد 
+	احضار کند. 
+	\begin{itemize}
+		\item 
+		اگر آن هیولا به قربانی نیاز داشت، کارت‌هایی را در زمین که کمترین 
+		امتیاز را دارند قربانی کند.
+	\end{itemize}
+	
+	\item
+	برای حمله، به ترتیب از هیولایی که بیشترین مقدار حمله را دارد به کارت‌هایی 
+	که رو به بالا (\lr{face up}) هستند در صورت پیروزی (کمتر بودن امتیاز 
+	آن‌ها از 
+	مقدار حمله آن کارت) حمله کند و سپس به همین ترتیب به کارت‌هایی که رو به 
+	پایین 
+	(\lr{face down}) هستند حمله کند.
+\end{itemize}
 
 \subsection*{{\titr حالت تقلب / دیباگ}}
 \addcontentsline{toc}{subsection}{{\fehrestContent حالت تقلب / دیباگ}}
-
+احتمالا در بازی های زیادی دیدید (شنیدید) که یک سری کدهای تقلب وجود دارد که 
+بازی را از حالت عادی خارج می کند، نمونه ای از این کد ها مثلا در بازی 
+\lr{GTA} 
+وجود دارد، می‌تواند باعث شود تمامی اسلحه ها برای بازیکن در دسترس باشد، یا 
+در 
+مثال دیگر می تواند باعث شوند بازیکن هیچگاه جان خودش را از دست ندهد.
+\\
+در پروژه شما نیز این قابلیت باید پیاده‌سازی شود. در این حالت پروژه شما باید 
+بتواند کارهایی که در حالت عادی نمی‌توانید انجام دهد را  پیاده‌سازی کند، 
+نمونه‌ای از این کار ها را می‌توان افزایش پول به مقدار دلخواه، برداشت کارت 
+بیش 
+از حد مجاز، جلوگیری از بین رفتن کارت‌ها در طی بازی و … باشد.
+\\
+در اینجا نمونه‌ای از دستورات پیشنهادی را برای شما آورده‌ایم، شما نیز می‌توانید 
+خودتان دستورات دیگری برای این حالت توسعه دهنده در زمینه‌های دیگر استفاده 
+کنید. 
+\\
+افزایش پول به مقدار دلخواه:
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		increase money  [Money] -{}-force
+	\end{latin}
+\end{mybox}
+انتخاب کارت اضافه تر از حد مجاز:
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		use card [card name] -{}-force
+	\end{latin}
+\end{mybox}
+    افزایش جان در هنگام بازی:
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		increase LP [amount] -{}-force
+	\end{latin}
+\end{mybox}
+    بردن بازی:
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		win game -{}-force
+	\end{latin}
+\end{mybox}
+شما نیز می‌توانید به سلیقه خودتان دستورات تقلب‌های دیگری مانند، از بین بردن 
+نوبت حریف، افزایش و کاهش قدرت‌های هیولاها، تغییرات در گورستان و … نیز اضافه 
+کنید.
 
 \subsection*{{\titr لاگ نوشتن}}
 \addcontentsline{toc}{subsection}{{\fehrestContent لاگ نوشتن}}
+قطعا می‌دانید که هیولاها جز مهمی از این بازی هستند، در این جا می‌خواهیم یک سری 
+از هیولا ها با ویژگی‌های آن‌ها را به شما معرفی کنیم:
 
 \subsubsection*{{\titr کارت‌های هیولا}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent کارت‌های هیولا}}
