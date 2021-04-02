@@ -1749,46 +1749,158 @@ attack})}}
 		Activate effect is only for spell cards.	
 	\end{latin}
 \end{mybox}
-نمایش داده شود و در صورتی که در فاز اصلی یا همان main phase نباشد پیام
+نمایش داده شود و در صورتی که در فاز اصلی یا همان \lr{main phase} نباشد پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		you can’t activate an effect on this turn
+	\end{latin}
+\end{mybox}
+نمایش داده شود و در صورتی که این کارت قبلا \lr{activate} شده باشد (در زمین 
+باشد) دستور 
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
 \begin{latin}	
-	
+	you have already activated this card
 \end{latin}
 \end{mybox}
+و اگر کارت انتخاب شده در دست باشد و هر 5 خانه‌ی \lr{spell} زمین پر باشند (در 
+صورتی که کارت ما برای فعال شدن نیاز به رفتن روی زمین داشته باشد و مربوط به 
+\lr{Field Zone} نباشد، پیام
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
 \begin{latin}	
-	
+	spell card zone is full
 \end{latin}
 \end{mybox}
+نمایش داده شود و اگر آن \lr{spell} شرایطی داشت که نتوانستیم آن را فعال کنیم 
+پیام
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
-\begin{latin}	
-	
-\end{latin}
+	\begin{latin}	
+		preparations of this spell are not done yet
+	\end{latin}
 \end{mybox}
+نمایش داده شود و در صورت موفقیت پیام
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
-\begin{latin}	
-	
-\end{latin}
+	\begin{latin}	
+		spell activated
+	\end{latin}
 \end{mybox}
-\begin{mybox}[colback=yellow]{پیغام به کاربر}
-\begin{latin}	
-	
-\end{latin}
-\end{mybox}
+نمایش داده شود و به اولین خانه ای از \lr{spell card zone} که خالی است برده 
+شود. در صورتی که کارت مربوط به \lr{Field Zone} باشد، به \lr{field zone} می 
+رود. اگر کارتی از قبل در \lr{field zone} وجود داشته باشد، کارت قبلی به 
+\lr{graveyard} برفته و کارت جدید به \lr{field zone} می‌رود. و \lr{activate} 
+می‌شود. نوع قرارگیری چنین کارتی \lr{O} است. یعنی به طور کامل توسط دو طرف دیده 
+می‌شود.
+\\
+(در مورد چگونگی اعمال \lr{spell} ها و پیام مربوط به کاری که انجام دادند بعدا 
+گفته می‌شود)
 
 \subsubsection*{{\titr به کمین گذاشتن یک جادو (\lr{set a spell}):}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent به کمین گذاشتن یک جادو 
 (\lr{set a spell})}}
-
+با دستور 
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+	    set 	
+	\end{latin}
+\end{mybox}
+میتوان علاوه بر کمین گذاشتن هیولا یک \lr{spell} هم به کمین گذاشت. در قسمت‌های 
+قبلی حالت \lr{monster} بودن را توضیح داده‌ایم. در اینحا همین مسئله را برای 
+\lr{Spell} کارت‌ها توضیح می‌دهیم.
+\\
+اگر کارتی انتخاب نشده باشد و کارت انتخاب شده (\lr{selected}) نداشته باشیم 
+پیام زیر چاپ شود:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		no card is selected yet
+	\end{latin}
+\end{mybox}
+و در غیر این صورت اگر کارتی که انتخاب شده است در دست (\lr{hand}) بازیکن 
+نباشد:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		you can’t set this card	
+	\end{latin}
+\end{mybox}
+در غیر این صورت اگر این کارت \lr{Spell} باشد، در صورتی که در فاز اصلی 1 یا 2 
+نباشد پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		you can’t do this action in this phase
+	\end{latin}
+\end{mybox}
+نمایش داده شود و اما اگر هر 5 خانه ی \lr{spell card zone} پر باشند دستور
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		spell card zone is full
+	\end{latin}
+\end{mybox}
+را نمایش دهید و در آخر اگر \lr{set} کردن او به صورت کامل انجام شد آن کارت را 
+به اولین (از لحاظ شماره ی آن خانه) خانه ای در \lr{spell card zone} که خالی 
+(\lr{Empty}) است ببرید (طبعا نوع قرار گیری در آن خانه نیز \lr{H} است) و 
+دستور
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		set successfully
+	\end{latin}
+\end{mybox}
+را نمایش دهید.
 
 \subsubsection*{{\titr به کمین گذاشتن یک تله}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent به کمین گذاشتن یک تله}}
+پس از انتخاب یک تله، برای به کمین گذاشتنش از دستور زیر استفاده می‌کنیم.
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		set 
+	\end{latin}
+\end{mybox}
+اگر کارتی انتخاب نشده باشد و کارت انتخاب شده(\lr{selected}) نداشته باشیم 
+پیام زیر چاپ شود
 
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		no card is selected yet
+	\end{latin}
+\end{mybox}
+و در غیر این صورت اگر کارتی که انتخاب شده است در دست (\lr{hand}) بازیکن 
+نباشد
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+\begin{latin}	
+	you can’t set this card
+\end{latin}
+\end{mybox}
+در غیر این صورت فرض کنید در این بخش این کارت حتما \lr{trap} است. حال در 
+صورتی که در فاز اصلی 1 یا 2 نباشد پیام
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+\begin{latin}	
+	you can’t do this action in this phase
+\end{latin}
+\end{mybox}
+نمایش داده شود. اگر هر 5 خانه ی \lr{spell card zone} پر باشند دستور
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+\begin{latin}	
+	spell card zone is full	
+\end{latin}
+\end{mybox}
+را نمایش دهید و در آخر اگر \lr{set} کردن او به صورت کامل انجام شد آن کارت را 
+به اولین (از لحاظ شماره ی آن خانه) خانه‌ای در \lr{spell card zone} که خالی 
+(\lr{Empty}) است ببرید (طبعا نوع قرار گیری در آن خانه نیز \lr{H} است) و 
+دستور
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+\begin{latin}	
+	set successfully
+\end{latin}
+\end{mybox}
+را نمایش دهید.
 
 \subsubsection*{{\titr فعال کردن یک تله یا جادو در نوبت حریف}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent فعال کردن یک تله یا جادو 
 در نوبت حریف}}
-
+همانطور که میدانید برای فعال کردن بعضی از \lr{spell} ها و \lr{trap} ها باید 
+شرایط خاصی رخ دهد که در بخش \lr{spell} و \lr{trap} با آنها آشنا می‌شوید.
+\\
+در زمانی که بعضی شرایط فعال سازی بعضی از \lr{trap} ها یا \lr{spell} ها در 
+نوبت حریف برقرار شد یا کارت \lr{quick spell} رد زمین حریف \lr{set} شده باشد 
+باید همانجا نوبت به بازیکن حریف داده شود و پیام زیر چاپ شود و حتی برد بازی 
+دوباره چاپ شود.
 
 \subsubsection*{{\titr احضار آیینی:/ (\lr{Ritual Summon})}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent احضار آیینی:/ (\lr{Ritual 
