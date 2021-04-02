@@ -402,10 +402,251 @@ title=#2,#1}
 
 
 
-\subsection*{{\titr کاربر و منوها}}
-\addcontentsline{toc}{subsection}{{\fehrestContent کاربر و منوها}}
+\subsection*{{\titr کاربر، منوها و موارد عمومی}}
+\addcontentsline{toc}{subsection}{{\fehrestContent کاربر، منوها و موارد عمومی
+}}
 
+در این بازی مانند تمام بازی‌های دیگر یک عده کاربر وجود دارند که بازی می‌کنند. 
+هر کاربر باید فیلد‌های زیر را داشته باشد:
+\begin{itemize}[label=$\blacksquare$]
+	\begin{latin}
+		\item username
+		\item password
+		\item nickname
+		\item score
+	\end{latin}
+\end{itemize}
+در ابتدای بازی هر فرد باید ثبت نام کند و سپس در دفعات بعدی فقط وارد شود و 
+بازی کند.
+\\
+همچنین یک تابلو امتیازات وجود دارد که کاربران را بر اساس امتیازی که دارند، 
+رتبه‌بندی می‌کند و با نام مستعارشان نمایش می‌دهد.
+\\
+در فاز‌ آخر پروژه نیز باید امکان چت (\lr{global chat}) میان کاربران فراهم 
+شود؛ اما برای این فاز با توجه به نبود شبکه، نیازی به پیاده‌سازی آن نیست.
+\\
+پس از ورود به بازی، وارد منوی ورود و ثبت‌نام (\lr{Login Menu}) می‌شویم و پس از 
+ساخت اکانت و وارد شدن کاربر به منوی اصلی (\lr{Main Menu}) می‌رویم که راه 
+ارتباطی میان تمام اجزای مختلف بازی است. لیست منو‌هایی که باید در منوی اصلی 
+پشتیبانی شوند به شرح زیر است:
 
+\begin{itemize}[label=$\blacksquare$]
+	\begin{latin}
+		\item New Game
+		\item Deck
+		\item Shop
+		\item Profile
+		\item Scoreboard
+		\item Exit
+	\end{latin}
+\end{itemize}
+دستورات هر منو فقط داخل آن‌ها معتبر است و اگر در منوی مربوطه صدا زده نشوند، 
+باید خطای مناسب چاپ شود.
+
+\subsubsection*{{\titr دستورات مرتبط با کاربر و منو}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent دستورات مرتبط با کاربر و 
+منو}}
+\vspace{.5cm}
+\textbf{ورود به یک منو:}
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		menu enter <menu name>
+	\end{latin}
+\end{mybox}
+در صورتی که کاربر در منوی اصلی باشد و وارد منوی \lr{Exit} شود، بازی باید 
+خاتمه یابد.
+\\
+در صورتی که کاربر داخل یک منوی دیگر باشد باید خطای زیر چاپ شود:
+\\
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		menu navigation is not possible
+	\end{latin}
+\end{mybox}
+
+\vspace{.5cm}
+\textbf{خروج از یک منو:}
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		menu exit
+	\end{latin}
+\end{mybox}
+در صورتی داخل یک منو باشیم، این دستور ما را به منوی بالاتر می‌برد و اگر در 
+منوی اصلی باشیم وارد منوی ورود و ثبت‌نام خواهیم شد. در صورتی که در منوی 
+ورود 
+و ثبت‌نام بودیم، بازی خاتمه خواهد یافت.
+
+\vspace{.5cm}
+\textbf{منوی فعلی:}
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		menu show-current 
+	\end{latin}
+\end{mybox}
+این دستور نام منوی فعلی را نشان می‌دهد و اگر در منوی اصلی باشیم 
+\lr{Main Menu} و اگر در منوی ورود و ثبت‌نام باشیم \lr{Login Menu} چاپ می‌شود.
+
+\vspace{.5cm}
+\textbf{ساخت کاربر جدید:}
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		user create --username <username> --nickname <nickname> --password 
+		<password>
+	\end{latin}
+\end{mybox}
+پیغام موفقیت:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		user created successfully!
+	\end{latin}
+\end{mybox}
+خطا‌های زیر در صورت وجود به همین ترتیب بررسی شوند:
+\\
+نام کاربری تکراری:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		user with username <username> already exists
+	\end{latin}
+\end{mybox}
+نام مستعار تکراری:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		user with nickname <nickname> already exists
+	\end{latin}
+\end{mybox}
+
+\vspace{.5cm}
+\textbf{ورود کاربر:}
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		user login --username <username> --password <password>
+	\end{latin}
+\end{mybox}
+پیغام موفقیت:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		user logged in successfully!
+	\end{latin}
+\end{mybox}
+خطا‌های زیر در صورت وجود به همین ترتیب بررسی شوند:
+\\
+عدم وجود کاربر با این نام کاربری:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		Username and password didn’t match!
+	\end{latin}
+\end{mybox}
+رمز اشتباه:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		Username and password didn’t match!
+	\end{latin}
+\end{mybox}
+توجه کنید که از دیدگاه امنیت، یک تلاش ناموفق برای ورود هیچ‌گاه نباید دارای 
+اطلاعاتی باشد که فرایند ورود را برای بار دوم راحت‌تر کند. مثلا اگر فردی 
+صرفا 
+قصد دزدیدن یکسری اکانت بدون توجه به صاحب آن‌ها را داشته باشد و در نتیجه 
+یکسری نام‌کاربری تصادفی را امتحان کند، در صورتی که نام‌کاربری و پسورد مطابقت 
+نداشت، نباید از پیام ما متوجه بشود که نام‌کاربری که وارد کرده، واقعا در 
+سیستم وجود دارد. در نتیجه در هر دو حالت بالا پیغام خطای یکسانی چاپ می‌شود.
+
+\vspace{.5cm}
+\textbf{خروج کاربر:}
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		user logout
+	\end{latin}
+\end{mybox}
+این دستور تنها در منوی اصلی معتبر است و در صورت موفقیت، وارد منوی ورودی و 
+ثبت‌نام می‌شود.
+\\
+پیغام موفقیت:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		user logged out successfully!
+	\end{latin}
+\end{mybox}
+
+\vspace{.5cm}
+\textbf{جدول امتیازات:}
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		scoreboard show
+	\end{latin}
+\end{mybox}
+پس از ورود به منوی \lr{scoreboard} با اجرای دستور باید لیست کاربران که بر 
+اساس امتیازشان به صورت نزولی مرتب شده است به همراه نام مستعارشان نمایش داده 
+شود. اگر دو کاربر امتیاز برابر داشتند، نام مستعارشان را به ترتیب حروف الفبا 
+اما با رتبه یکسان چاپ کنید. هر کاربر در یک خط و با فرمت زیر چاپ شود:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		rank- <nickname>: <score>
+	\end{latin}
+\end{mybox}
+نمونه‌ای از خروجی به شکل زیر است:
+\begin{mybox}[colback=yellow]{نمونه خروجی}
+	\begin{latin}	
+		1- shahin: 5000 \\
+		2- hovakhshatara: 4000 \\
+		3- ebrahim\_1379: 3000 \\
+		3- the-ultimate-mahD: 3000 \\
+		5- rostam dastan: 1000
+	\end{latin}
+\end{mybox}
+
+\vspace{.5cm}
+\textbf{پروفایل:}
+\\
+پس از ورود به منوی profile دستورات زیر معتبر هستند:
+\\
+\vspace{.5cm}
+\textbf{تغییر نام مستعار:}
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		profile change --nickname <nickname>
+	\end{latin}
+\end{mybox}
+پیغام موفقیت:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		nickname changed successfully!
+	\end{latin}
+\end{mybox}
+در صورتی که کاربری با این نام مستعار وجود داشت خطای زیر چاپ شود:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		user with nickname <nickname> already exists
+	\end{latin}
+\end{mybox}
+
+\vspace{.5cm}
+\textbf{تغییر رمز عبور:}
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		profile change --password --current <current password> --new <new 
+		password>
+	\end{latin}
+\end{mybox}
+پیغام موفقیت:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		password changed successfully!
+	\end{latin}
+\end{mybox}
+خطا‌های زیر در صورت وجود به همین ترتیب بررسی شوند:
+\\
+نادرست بودن رمز فعلی:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		Current password is invalid
+	\end{latin}
+\end{mybox}
+یکی بودن رمز قدیم و جدید:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		please enter a new password
+	\end{latin}
+\end{mybox}
 
 \subsection*{{\titr معرفی ساختار کارت‌ها}}
 \addcontentsline{toc}{subsection}{{\fehrestContent معرفی ساختار کارت‌ها}}
