@@ -653,6 +653,267 @@ title=#2,#1}
 
 \subsection*{{\titr دک و دسته‌کارت‌ها}}
 \addcontentsline{toc}{subsection}{{\fehrestContent دک و دسته‌کارت‌ها}}
+دسته کارت یا به اختصار د.ک. (\lr{Deck}) در واقع مخزنی از کارت‌هاست که شما با 
+آن به مصاف حریف خود می‌روید. هر دک به دو دسته تقسیم می‌شود:
+\begin{itemize}
+	\item
+	دک اصلی
+	\item
+	دک جانبی
+\end{itemize}
+
+\subsubsection*{{\titr دک اصلی (\lr{Main Deck}):}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent دک اصلی (\lr{Main 
+Deck}):}}
+دک اصلی شامل حداقل ۴۰ کارت و حداکثر ۶۰ کارت است. 
+\\
+از هر کارت تنها ۳ عدد می‌تواند در یک دک باشد و بعد از اضافه شدن آن کارت به 
+دک، آن کارت از موجودی کارت‌های بازیکن حذف می‌شود، به عبارتی اگر بخواهید از یک 
+کارت در چند دک استفاده کنید، باید به تعدادی که از آن کارت در دک می‌خواهید 
+قرار دهید، در موجودی خود کارت داشته باشید.
+
+\subsubsection*{{\titr دک فرعی (\lr{Side Deck}):}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent دک فرعی (\lr{Side 
+Deck}):}}
+دک جانبی شامل حداقل صفر و حداکثر ۱۵ کارت است.
+\\
+کاربرد دک جانبی این است که شما می‌توانید در حین بازی، یک کارت از دک جانبی را 
+با دک اصلی جا‌به‌جا کنید تا استراتژی خود را بهبود ببخشید. بنابراین تعداد 
+کارت‌های دک جانبی در بازی همیشه ثابت است و تنها یک کارت میان دک جانبی و اصلی 
+جا‌به‌جا می‌شود.
+
+\subsubsection*{{\titr نکات کلی:}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent نکات کلی:}}
+\begin{itemize}
+	\item
+	هر بازیکن برای بازی‌، باید حتما یک دک معتبر داشته باشد و دکی معتبر است 
+	که دک اصلی‌آن حداقل ۴۰ کارت داشته باشد.
+	\item
+	هر بازیکن می‌تواند به تعداد دلخواه دک داشته باشد اما تنها یک دک به عنوان 
+	دک فعال (\lr{Active Deck}) انتخاب شده و با آن بازی می‌شود.
+	\item
+	نام دک‌ها نباید تکراری باشد.
+	\item
+	از آن‌جایی که تعداد مجاز یک کارت در دک ۳ است، دک جانبی نیز نباید این 
+	قانون را نقض کند، به عبارتی مجموع یک کارت در دک اصلی و جانبی ۳ است و 
+	اگر از 
+	یک کارت ۳ عدد در دک اصلی وجود داشت، دیگری نمیتوان آن کارت را به دک 
+	جانبی 
+	اضافه کرد.
+\end{itemize}
+
+\subsubsection*{{\titr دستورات مرتبط با دک:}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent دستورات مرتبط با دک:}}
+پس از ورود به منوی \lr{Deck}، دستورات زیر معتبر هستند:
+\vspace{.5cm}
+\textbf{ساخت دک جدید:}
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		deck create <deck name>
+	\end{latin}
+\end{mybox}
+توجه: نام دک می‌تواند چند بخشی باشد. (به طور مثال: \lr{my first deck})
+\\
+پیغام موفقیت:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		deck created successfully!
+	\end{latin}
+\end{mybox}
+خطا در صورتی که دک با این نام وجود داشته باشد:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		deck with name <deck name> already exists
+	\end{latin}
+\end{mybox}
+
+\vspace{.5cm}
+\textbf{حذف دک:}
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		deck delete <deck name>
+	\end{latin}
+\end{mybox}
+توجه: زمانی که یک دک حذف می‌شود، تمام کارت‌های موجود در آن به موجودی کارت‌های 
+بازیکن باز می‌گردد.
+\\
+پیغام موفقیت:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		deck deleted successfully
+	\end{latin}
+\end{mybox}
+خطا در صورتی که دک با این نام وجود نداشته باشد:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		deck with name <deck name> does not exist
+	\end{latin}
+\end{mybox}
+
+\vspace{.5cm}
+\textbf{انتخاب دک به عنوان دک فعال:}
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		deck set-activate <deck name>
+	\end{latin}
+\end{mybox}
+توجه: معتبر نبودن دک در هنگام شروع بازی بررسی خواهد شد.
+\\
+پیغام موفقیت:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		deck activated successfully
+	\end{latin}
+\end{mybox}
+خطا در صورتی که دک با این نام وجود نداشت:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		deck with name <deck name> does not exist
+	\end{latin}
+\end{mybox}
+
+\vspace{.5cm}
+\textbf{اضافه کردن کارت به دک:}
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		deck add-card --card <card name> --deck <deck name> --side(optional)
+	\end{latin}
+\end{mybox}
+توجه کنید که تنها برای اضافه کردن کارت به \lr{side deck} از پرچم \lr{side--} 
+استفاده می‌کنیم. اگر از آن استفاده نکینم، به معنی اضافه شدن به دک اصلی است.
+\\
+پیغام موفقیت:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		card added to deck successfully
+	\end{latin}
+\end{mybox}
+خطاهای زیر در صورت وجود باید به همین ترتیب بررسی شوند:
+\\
+عدم وجود کارت با این نام در موجودی کارت‌های بازیکن:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		card with name <card name> does not exist
+	\end{latin}
+\end{mybox}
+عدم وجود دک با این نام:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		deck with name <deck name> does not exist
+	\end{latin}
+\end{mybox}
+پر بودن دک اصلی یا جانبی:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		<main/side> deck is full
+	\end{latin}
+\end{mybox}
+اگر در حال حاضر از یک کارت ۳ تا در دک موجود باشد:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		there are already three cards with name <card name> in deck <deck name>
+	\end{latin}
+\end{mybox}
+
+\vspace{.5cm}
+\textbf{حذف کارت از دک:}
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		deck rm-card --card <card name> --deck <deck name> --side(optional)
+	\end{latin}
+\end{mybox}
+توجه کنید که تنها برای حذف کردن کارت از side deck از پرچم side-- استفاده 
+می‌کنیم.
+\\
+توجه: زمانی که یک کارت از دک حذف می‌شود، به موجودی کارت‌های بازیکن برمی‌گردد.
+\\
+پیغام موفقیت:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		card removed form deck successfully
+	\end{latin}
+\end{mybox}
+خطاهای زیر در صورت وجود باید به همین ترتیب بررسی شوند:
+\\
+عدم وجود دک با این نام:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		deck with name <deck name> does not exist
+	\end{latin}
+\end{mybox}
+عدم وجود کارت با این نام در دک اصلی یا جانبی:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		card with name <card name> does not exist in <main/side> deck
+	\end{latin}
+\end{mybox}
+
+\textbf{نمایش دک‌های بازیکن:}
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		deck show --all
+	\end{latin}
+\end{mybox}
+خروجی باید با فرمت زیر باشد:
+\\
+هر دک با فرمت زیر نمایش داده می‌شود که ابتدا نام دک، سپس تعداد کارت‌های موجود 
+در دک اصلی و سپس دک جانبی و در انتها معتبر بودن یا نبودن دک می‌آید.
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		<deck name>: main deck <number of main deck cards>, side deck <number 
+		of side deck cards>, <valid/not valid>
+	\end{latin}
+\end{mybox}
+به طور مثال:
+\begin{mybox}[colback=yellow]{خروجی نمونه}
+	\begin{latin}	
+		My best: main deck 50, side deck 5, valid
+	\end{latin}
+\end{mybox}
+خروجی کلی به شکل زیر است:
+\\
+ابتدا در صورتی که یک دک به عنوان دک فعال انتخاب شده باشد، نمایش داده خواهد 
+شد و در صورتی که دک فعالی وجود نداشته باشد چیزی زیر Active deck چاپ نمی‌شود، 
+سپس بقیه دک‌ها زیر Other decks به ترتیب حروف الفبا چاپ می‌شوند:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		Decks: \\
+		Active deck: \\
+		<active deck> \\
+		Other decks: \\
+		<other decks>
+	\end{latin}
+\end{mybox}
+اگر کاربر هیچ دکی نداشته باشد خروجی به شکل زیر خواهند بود:
+\begin{mybox}[colback=yellow]{خروجی نمونه}
+	\begin{latin}	
+		Decks: \\
+		Active deck: \\
+		Other decks:
+	\end{latin}
+\end{mybox}
+
+\vspace{.5cm}
+\textbf{نمایش یک دک:}
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		deck show --deck-name <deck name> --side(Opt)
+	\end{latin}
+\end{mybox}
+توجه: برای نمایش دک فرعی از پرچم \lr{side--} استفاده می‌کنیم.
+\\
+خروجی:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		Deck: <deck name> \\
+		Side/Main deck: \\
+		Monsters: \\
+		<card name>: <card description> \\
+		Spell and Traps: \\
+		<card name>: <card description> \\
+	\end{latin}
+\end{mybox}
+دقت شود که در هر قسمت ترتیب کارت‌ها بر اساس ترتیب الفبایی نامشان است.
 
 \subsection*{{\titr فروشگاه}}
 \addcontentsline{toc}{subsection}{{\fehrestContent فروشگاه}}
