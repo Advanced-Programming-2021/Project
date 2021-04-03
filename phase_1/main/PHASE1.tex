@@ -8,8 +8,8 @@
 \usepackage{enumitem}
 \usepackage[many]{tcolorbox}
 \usepackage{listings }
-%\usepackage[a4paper, total={6in, 8in} , top = 2cm,bottom = 4cm]{geometry}
-\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[a4paper, total={6in, 8in} , top = 2cm,bottom = 4cm]{geometry}
+%\usepackage[a4paper, total={6in, 8in}]{geometry}
 \usepackage{afterpage}
 \usepackage{amssymb}
 \usepackage{pdflscape}
@@ -376,13 +376,8 @@ title=#2,#1}
 \section*{{\titr معرفی بازی}}
 \addcontentsline{toc}{section}{{\fehrestContent معرفی بازی}}
 
+در مستند ضمیمه، به معرفی بازی و قواعد آن مستقل از خواسته‌های پروژه پرداخته شده است.
 
-\textbf{این دو عبارت زیر مربوط به داک سال قبلن. صرفا برای این که قالب نوشتن این مدل دستورات که label خاص کنارشون هست یا توی حاشیه خاص هستن دستتون باشه، گذاشتم. این خط رو پاک کنید بعدا. }TODO
-
-\begin{itemize}[label=$\blacksquare$]
-	\item
-	نام کاربری، نام، نام‌خانوادگی، ایمیل، شماره تلفن، رمز عبور 
-\end{itemize}
 
 
 
@@ -817,12 +812,14 @@ title=#2,#1}
 	\item کارت هیولا:
 \begin{mybox}[colback=yellow]{نمونه خروجی}
 	\begin{latin}	
-		Name: Card Name
-		Level: 4
-		Type: Warrior
-		ATK: 1500
-		DEF: 1500
-		Description: Some Text
+		\begin{verbatim}
+			Name: Card Name
+			Level: 4
+			Type: Warrior
+			ATK: 1500
+			DEF: 1500
+			Description: Some Text
+		\end{verbatim}
 	\end{latin}
 \end{mybox}	
 	
@@ -830,10 +827,12 @@ title=#2,#1}
 		\item کارت جادو:
 	\begin{mybox}[colback=yellow]{نمونه خروجی}
 		\begin{latin}	
+			\begin{verbatim}
 			Name: Card Name
 			Spell
 			Type: Normal
 			Description: Some Text
+				\end{verbatim}
 		\end{latin}
 	\end{mybox}	
 
@@ -841,10 +840,12 @@ title=#2,#1}
 	\item کارت تله:
 \begin{mybox}[colback=yellow]{نمونه خروجی}
 	\begin{latin}	
+		\begin{verbatim}
 		Name: Card Name
 		Trap
 		Type: Normal
 		Description: Some Text
+			\end{verbatim}
 	\end{latin}
 \end{mybox}	
 	
@@ -864,9 +865,9 @@ title=#2,#1}
 	دک جانبی
 \end{itemize}
 
-\subsubsection*{{\titr دک اصلی (\lr{Main Deck}):}}
+\subsubsection*{{\titr دک اصلی (\lr{Main Deck})}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent دک اصلی (\lr{Main 
-Deck}):}}
+Deck})}}
 دک اصلی شامل حداقل ۴۰ کارت و حداکثر ۶۰ کارت است. 
 \\
 از هر کارت تنها ۳ عدد می‌تواند در یک دک باشد و بعد از اضافه شدن آن کارت به 
@@ -874,9 +875,9 @@ Deck}):}}
 کارت در چند دک استفاده کنید، باید به تعدادی که از آن کارت در دک می‌خواهید 
 قرار دهید، در موجودی خود کارت داشته باشید.
 
-\subsubsection*{{\titr دک فرعی (\lr{Side Deck}):}}
+\subsubsection*{{\titr دک فرعی (\lr{Side Deck})}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent دک فرعی (\lr{Side 
-Deck}):}}
+Deck})}}
 دک جانبی شامل حداقل صفر و حداکثر ۱۵ کارت است.
 \\
 کاربرد دک جانبی این است که شما می‌توانید در حین بازی، یک کارت از دک جانبی را 
@@ -884,8 +885,8 @@ Deck}):}}
 کارت‌های دک جانبی در بازی همیشه ثابت است و تنها یک کارت میان دک جانبی و اصلی 
 جا‌به‌جا می‌شود.
 
-\subsubsection*{{\titr نکات کلی:}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent نکات کلی:}}
+\subsubsection*{{\titr نکات کلی}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent نکات کلی}}
 \begin{itemize}
 	\item
 	هر بازیکن برای بازی‌، باید حتما یک دک معتبر داشته باشد و دکی معتبر است 
@@ -904,9 +905,10 @@ Deck}):}}
 	اضافه کرد.
 \end{itemize}
 
-\subsubsection*{{\titr دستورات مرتبط با دک:}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent دستورات مرتبط با دک:}}
+\subsubsection*{{\titr دستورات مرتبط با دک}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent دستورات مرتبط با دک}}
 پس از ورود به منوی \lr{Deck}، دستورات زیر معتبر هستند:
+
 \vspace{.5cm}
 \textbf{ساخت دک جدید:}
 \begin{mybox}[colback=yellow]{دستور}
@@ -1078,8 +1080,8 @@ Deck}):}}
 خروجی کلی به شکل زیر است:
 \\
 ابتدا در صورتی که یک دک به عنوان دک فعال انتخاب شده باشد، نمایش داده خواهد 
-شد و در صورتی که دک فعالی وجود نداشته باشد چیزی زیر Active deck چاپ نمی‌شود، 
-سپس بقیه دک‌ها زیر Other decks به ترتیب حروف الفبا چاپ می‌شوند:
+شد و در صورتی که دک فعالی وجود نداشته باشد چیزی زیر \lr{Active deck} چاپ نمی‌شود، 
+سپس بقیه دک‌ها زیر \lr{Other decks} به ترتیب حروف الفبا چاپ می‌شوند:
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
 	\begin{latin}	
 		Decks: \\
@@ -1225,7 +1227,7 @@ Deck}):}}
 \begin{itemize}
 	\item گورستان کارت ها(\lr{graveyard}):
 	\\
-	با عبارت \lr{graveyard} به \lr{graveyard} خود و \lr{graveyard -{}-opponen}t 
+	با عبارت \lr{graveyard} به \lr{graveyard} خود و \lr{graveyard --opponent} 
 	به \lr{graveyard} حریف اشاره کند.
 	\item قسمت کارت های هیولا(\lr{monster card zone}):
 	\\
@@ -1235,12 +1237,28 @@ Deck}):}}
 	می‌دهیم استفاده می‌شوند.
 	\\
 	برای شماره گذاری کارت‌های monster زمین خود به صورت زیر عمل می‌کنیم:
-	\begin{figure}[h]
+	
+	\begin{center}
+	\begin{latin}
+	\begin{table}[h]
 		\centering
-		\includegraphics[width=.5\paperwidth]{./Resources/CardsNumbering.png}
-		\caption{شماره گذاری کارت‌های \lr{monster} زمین خود}
-		\label{}
-	\end{figure}
+		\resizebox{0.5\textwidth}{!}{%
+			\begin{tabular}{|c|c|c|c|c|}
+			
+				5 & 3 & 1 & 2 & 4 \\ 
+			\end{tabular}%
+		}
+	\end{table}
+\end{latin}
+\end{center}
+
+	
+%	\begin{figure}[h]
+%		\centering
+%		\includegraphics[width=.5\paperwidth]{./Resources/CardsNumbering.png}
+%		\caption{شماره گذاری کارت‌های \lr{monster} زمین خود}
+	%	\label{}
+	%\end{figure}
 	مثلا کارتی که در جایگاه 2 است را به صورت زیر صدا می‌زنیم.
 	\begin{mybox}[colback=yellow]{ورودی نمونه}
 		\begin{latin}	
@@ -1249,12 +1267,26 @@ Deck}):}}
 	\end{mybox}
 	و چون کارت‌های زمین حریف 180 درجه دوران یافته‌اند شماره‌گذاری آنها به صورت 
 	زیر است:
-	\begin{figure}[h]
-		\centering
-		\includegraphics[width=.5\paperwidth]{./Resources/CardsNumbering_1.png}
-		\caption{شماره گذاری کارت‌های \lr{monster} زمین حریف}
-		\label{}
-	\end{figure}
+	
+		\begin{center}
+		\begin{latin}
+			\begin{table}[h]
+				\centering
+				\resizebox{0.5\textwidth}{!}{%
+					\begin{tabular}{|c|c|c|c|c|}
+						
+						4 & 2 & 1 & 3 & 5 \\ 
+					\end{tabular}%
+				}
+			\end{table}
+		\end{latin}
+	\end{center}
+	%\begin{figure}[h]
+	%	\centering
+	%	\includegraphics[width=.5\paperwidth]{./Resources/CardsNumbering_1.png}
+	%	\caption{شماره گذاری کارت‌های \lr{monster} زمین حریف}
+		%\label{}
+	%\end{figure}
 	برای مثال برای سمت راست‌ترین کارت باید
 	\begin{mybox}[colback=yellow]{ورودی نمونه}
 		\begin{latin}	
@@ -1264,8 +1296,8 @@ Deck}):}}
 	را صدا بزنیم.
 	 \item قسمت کارت‌های جادو و تله (\lr{spell and trap card zone})
 	 \\
-	 نام‌گذاری کارت‌های این بخش مانند بخش بالا است با یک تفاوت که به جای 
-	 \lr{monster-{}-} باید از \lr{spell-{}-} استفاده کرد. (مثلا:  \lr{select -
+	 نام‌گذاری کارت‌های این بخش مانند بخش بالا است با یک تفاوت که به جای\\ 
+	 \lr{-{}-monster} باید از \lr{-{}-spell} استفاده کرد. (مثلا:  \lr{select -
 	 {}-
 	 spell 1})
 	 
@@ -1282,19 +1314,40 @@ Deck}):}}
 \end{itemize}
 
 \vspace{.5cm}
-\textbf{چگونگی نمایش برد:}
+\textbf{چگونگی نمایش صفحه بازی:}
 در این قسمت چگونگی نمایش کل برد بازی به همراه کارت های درون هر بخش و یک 
 مثال و را توضیح می‌دهیم.
 \\
-برد بازی بعد از اتمام هر عملیات به شکل زیر نمایش داده می‌شود:
+برد بازی بعد از اتمام هر عملیات به شکل زیر نمایش داده می‌شود: معنای هر یک از نمادهای اختصاری در ادامه آورده شده است.
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
 	\begin{latin}	
-		TODO: google doc page 17 text here
+		\begin{verbatim}
+			
+			<opponent nickname>: <opponent life points>
+			C C C 
+			DN								
+			O	O	H	O	E
+			E	DH	DO	OO	E
+			GY						FZ
+			---------------------------
+			FZ						GY
+			OO	DH	DH	DH	E
+			O	O	O	O	H
+			DN
+			C C C 
+			<my nickname> : <my life point>		
+			
+			
+		\end{verbatim}
 	\end{latin}
 \end{mybox}
+
+در عبارت بالا C‌ های هر یک از طرفین باید به تعداد کارت‌هایی باشد که در دست دارند.
+
+
 (توجه شود که تمام فواصل بالا تب [\lr{tab}] هستند)  
 \\
-در بخش بالا کارت‌های آبی مربوط به بازیکنی است که در آن لحظه نوبت اوست که با 
+در بخش بالا کارت‌های پایین‌خط مربوط به بازیکنی است که در آن لحظه نوبت اوست که با 
 تغییر \lr{turn} بازی نیز باید 180 درجه بچرخد و عوض شود.
 \\
 در بخش بالا به جای \lr{GY} باید تعداد کارت های درون \lr{graveyard} را نمایش 
@@ -1315,13 +1368,11 @@ Deck}):}}
 در بخش تله و جادو (\lr{spell and trap}) به ازای هر کارتی که برای حریف نمایش 
 داده می‌شود \lr{O} و هر کارتی که نمایش داده نمی شود \lr{H} بزارید.
 \\
-در نمایش برد بازی به جای \lr{DN} باید تعداد کارت های باقی مانده در 
+در نمایش صفحه بازی به جای \lr{DN} باید تعداد کارت های باقی مانده در 
 \lr{deck}. دوباره تکرار می‌شود که در صفحه‌ی بازی‌، صفحه‌ی دشمن 180 درجه دوران 
-یافته و ترتیب کارت ها در هر \lr{Zone} برعکس شده است.
+یافته و ترتیب کارت‌ها در هر \lr{Zone} برعکس شده است.
 
-\subsubsection*{{\titr مرور قوانین بازی}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent مرور قوانین بازی}}
-\lr{TODO: Soroush Miazane :D}
+
 
 \subsubsection*{{\titr انتخاب یک کارت}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent انتخاب یک کارت}}
@@ -1343,11 +1394,11 @@ Deck}):}}
 به طور کامل توضیح می‌دهیم.
 \begin{itemize}
 	\item
-	آدرس کارت‌هایی که در \lr{monster zone} خود بازیکن هستند به صورت
+	آدرس کارت‌هایی که در \lr{monster zone} خود بازیکن هستند به صورت\\
 	 \lr{select -{}-monster <number>}
 	  است. که \lr{number} ها در بخش های بالاتر داک توضیح داده شده اند.
 	\item
-	آدرس کارت‌هایی که در \lr{spell and trap card zone} هستند به صورت
+	آدرس کارت‌هایی که در \lr{spell and trap card zone} هستند به صورت\\
 	 \lr{-{}-spell <number>}
 	 است. 
 	\item
@@ -1356,11 +1407,11 @@ Deck}):}}
 	خود 
 	بازیکن زیاد نیست) به صورت \lr{-{}-monster -{}-opponent <number>} است.
 	\item
-	آدرس کارت هایی که در \lr{spell card zone} حریف هستند به صورت
+	آدرس کارت هایی که در \lr{spell card zone} حریف هستند به صورت\\
 	 \lr{-{}-spell -{}-opponent <number>}
 	  است.
 	\item
-	آدرس کارتی که در قسمت \lr{field zone} بازیکن است به صورت \lr{field-{}-} 
+	آدرس کارتی که در قسمت \lr{field zone} بازیکن است به صورت \lr{-{}-field} 
 	است.
 	\item
 	آدرس کارتی که در قسمت \lr{field zone} حریف است به صورت
@@ -1428,7 +1479,7 @@ Deck}):}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent تغییر فاز های نوبت و 
 دستور \lr{next phase}}}
 همانطور که می دانید بازی از 6 فاز
- \lr{draw phase} ، \lr{stand by phase} ، \lr{main phase 1} ، \lr{battle phase} و 
+ \lr{draw phase} ، \lr{standby phase} ، \lr{main phase 1} ، \lr{battle phase} و 
  \lr{main phase 2} و \lr{end phase }
  تشکیل شده است.
 \\
@@ -1455,6 +1506,8 @@ Deck}):}}
 
 \vspace{.5cm}
 \textbf{فاز آماده باش (\lr{standby phase}):}
+
+به جز یکسری کارت‌های خاص که اثرشان در این فاز اعمال می‌شود (مثلا اضافه کردن مقداری به LP یکی از طرفین)، در این فاز کار خاصی انجام نمی‌شود.
 
 \vspace{.5cm}
 \textbf{فاز اصلی اول (\lr{Main Phase 1}):}
@@ -2447,7 +2500,7 @@ card})}}
 \end{mybox}
 
 \subsection*{{\titr معرفی کارت‌ها }}
-\addcontentsline{toc}{subsection}{{\fehrestContent لاگ نوشتن}}
+\addcontentsline{toc}{subsection}{{\fehrestContent معرفی کارت‌ها}}
 قطعا می‌دانید که هیولاها جز مهمی از این بازی هستند، در این جا می‌خواهیم یک سری 
 از هیولا ها با ویژگی‌های آن‌ها را به شما معرفی کنیم:
 
