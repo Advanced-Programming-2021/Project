@@ -3,6 +3,7 @@
 \usepackage[svgnames]{xcolor} 
 \usepackage{fancyhdr}
 \usepackage{fancyvrb}
+\usepackage{forest}
 \usepackage{tocloft}
 \usepackage[hidelinks]{hyperref}
 \usepackage{enumitem}
@@ -194,7 +195,7 @@ title=#2,#1}
     \vspace{0.20cm}
 
    مهلت ارسال:\\
-    \textbf{{۲۳ اردیبهشت - }}
+    \textbf{{24 اردیبهشت - }}
     \textbf{{ساعت 23:59:59}}
 
     \vspace{0.10cm}
@@ -264,6 +265,11 @@ title=#2,#1}
 
 \item
 در صورت کشف تقلب از هریک از تیم‌ها، برای بار اول منفی نمرهٔ آن فاز برای آن تیم ثبت می‌شود و برای بار دوم، نمرهٔ منفی کل پروژه برای تیم لحاظ خواهد‌ شد که معادل مردود شدن در درس است.
+
+
+\item
+شما باید \textbf{حداقل} برای یکی از فرایندهای موجود در پروژه، \lr{Unit Test} بنویسید. همچنین برای \lr{code coverage} بالاتر از ۷۰ درصد، به صورت خطی با درصد \lr{coverage}، نمره‌ٔ امتیازی تعلق خواهد گرفت.
+
 \end{itemize}
 
 \newpage
@@ -297,13 +303,18 @@ title=#2,#1}
 \subsection*{{\titr کلیات پروژه}}
 \addcontentsline{toc}{subsection}{{\fehrestContent کلیات پروژه}}
 
-در این فاز، صرفا منطق پروژه، بدون پیاده‌سازی گرافیک یا معماری شبکهٔ آن، باید پیاده‌سازی شود. نحوهٔ ارتباط با کاربر نیز از طریق واسط کاربری کنسول است. توجه داشته باشید که در فاز سوم پروژه، باید سیستم را طبق یک معماری سرور-کلاینت طراحی کنید. در معماری اکثر بازی‌هایی که به این شکل انجام می‌شوند، منطق بازی در سرور و مستقل از واسط کاربری سمت کلاینت و کاربر است. هر چند برای فاز اول نیاز به این مسئله ندارید ولی خوب‌ است که از الآن طراحی خوبی داشته باشید که قسمت‌های مختلف پروژه نظیر منطق اصلی انجام بازی، وابستگی اساسی به بخش‌هایی نظیر واسط کاربری نداشته باشد.
+در این فاز، صرفا منطق پروژه، بدون پیاده‌سازی گرافیک یا معماری شبکهٔ آن، باید پیاده‌سازی شود. نحوهٔ ارتباط با کاربر نیز از طریق واسط کاربری کنسول است. توجه داشته باشید که در فاز سوم پروژه، باید سیستم را طبق یک معماری سرور-کلاینت طراحی کنید. در معماری اکثر بازی‌هایی که به این شکل انجام می‌شوند، منطق بازی در سرور و مستقل از واسط کاربری سمت کلاینت و کاربر است. هر چند برای فاز اول نیاز به این مسئله ندارید ولی خوب‌ است که از الآن طراحی خوبی داشته باشید که قسمت‌های مختلف پروژه نظیر منطق اصلی انجام بازی، وابستگی اساسی به بخش‌هایی نظیر واسط کاربری نداشته باشد. مثلا در فاز‌ آخر پروژه باید امکان چت (\lr{Global Chat}) میان کاربران فراهم 
+شود؛ اما برای این فاز با توجه به نبود شبکه، نیازی به پیاده‌سازی آن نیست.
 
-همچنین توجه کنید که در فاز دوم قرار است برای منطق بازی که در این فاز طراحی شده است، رابط کاربری گرافیکی طراحی کنید. در نتیجه جداسازی درست منطق بازی از رابط کاربری آن باعث می‌شود که در فاز $2$ نیاز به بازنویسی کدهای منطق به شدت کاهش یابد. 
+همچنین توجه کنید که در فاز دوم قرار است برای منطق بازی که در این فاز طراحی شده است، رابط کاربری گرافیکی طراحی کنید. در نتیجه جداسازی درست منطق بازی از رابط کاربری آن باعث می‌شود که در فاز ۲ نیاز به بازنویسی کدهای منطق به شدت کاهش یابد. 
 
 در ادامهٔ مستند، موجودیت‌ها، نمای کلی رابط کاربری سیستم، نقش‌ها و دستورات لازم شرح داده‌شده است.
 
 \begin{enumerate}[label={نکته \arabic*:}]
+	
+	\item
+	توجه کنید که در فاز 2 باید موارد جدیدی مرتبط با منطق بازی را  اضافه کنید. این موارد اضافه می‌تواند شامل حالات جدید امتیازدهی و یا \lr{Card Creator} باشد.
+	
 \item
  تمامی اطلاعات، اعم از اطلاعات کاربران، کارت‌ها و... باید در خارج از برنامه (مثلا روی فایل) ذخیره شوند و پس از \lr{terminate} شدن برنامه و اجرای مجدد آن، بصورت خودکار اطلاعات قبلی خوانده شود و قابل دسترسی باشد. برای این کار می‌توانید از ابزارهای کار با \lr{Json} در جاوا، مثل
   \href{https://www.tutorialspoint.com/gson/gson_quick_guide.htm}{\textcolor{blue}{\lr{Gson}}}
@@ -321,6 +332,8 @@ title=#2,#1}
 
 \item
 در هر جایی از پروژه می‌توانید هرگونه خلاقیتی را به‌کار ببرید. با این حال توجه کنید که خواسته‌های واضح پروژه بایستی انجام شوند و سیستم ورودی گرفتن و خروجی دادن شما باید مطابق جزییات گفته شده در این مستند باشد.
+
+
 
 
 \item
@@ -368,6 +381,19 @@ title=#2,#1}
 	
 \end{mybox}
 
+همچنین توجه کنید که اگر دستور نامعتبری وارد شد که در قسمت مربوطه، برای آن خطای به خصوصی در نظر گرفته نشده بود، پیام زیر را چاپ کنید:
+
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	
+	
+	\begin{latin}
+		
+	invalid command
+		
+	\end{latin}
+	
+\end{mybox}
+
 
 \end{enumerate}
 
@@ -405,35 +431,73 @@ title=#2,#1}
 		\item score
 	\end{latin}
 \end{itemize}
+ \forestset{
+	declare dimen register=folder indent,
+	folder indent=.45em,
+	folder/.style={
+		parent anchor=-children last,
+		anchor=parent first,
+		calign=child,
+		calign primary child=1,
+		for children={
+			child anchor=parent,
+			anchor=parent first,
+			edge={rotate/.option=!parent.grow},
+			edge path'/.expanded={
+				([xshift=\forestregister{folder indent}]!u.parent anchor) |- (.child anchor)
+			},
+		},
+		after packing node={
+			if n children=0{}{
+				tempdiml=l_sep()-l("!1"),
+				tempdims={-abs(max_s("","")-min_s("",""))-s_sep()},
+				for children={
+					l+=tempdiml,
+					s+=tempdims()*(reversed()-0.5)*2,
+				},
+			},
+		},
+	}
+}
+
 در ابتدای بازی هر فرد باید ثبت نام کند و سپس در دفعات بعدی فقط وارد شود و 
 بازی کند.
 \\
 همچنین یک تابلو امتیازات وجود دارد که کاربران را بر اساس امتیازی که دارند، 
 رتبه‌بندی می‌کند و با نام مستعارشان نمایش می‌دهد.
-\\
-در فاز‌ آخر پروژه نیز باید امکان چت (\lr{global chat}) میان کاربران فراهم 
-شود؛ اما برای این فاز با توجه به نبود شبکه، نیازی به پیاده‌سازی آن نیست.
-\\
+
 پس از ورود به بازی، وارد منوی ورود و ثبت‌نام (\lr{Login Menu}) می‌شویم و پس از 
 ساخت اکانت و وارد شدن کاربر به منوی اصلی (\lr{Main Menu}) می‌رویم که راه 
-ارتباطی میان تمام اجزای مختلف بازی است. لیست منو‌هایی که باید در منوی اصلی 
-پشتیبانی شوند به شرح زیر است:
-
-\begin{itemize}[label=$\blacksquare$]
-	\begin{latin}
-		\item New Game
-		\item Deck
-		\item Shop
-		\item Profile
-		\item Scoreboard
-		\item Exit
+ارتباطی میان تمام اجزای مختلف بازی است. توجه کنید اگر کاربر بدون لاگین کردن قصد رفتن به منوی دیگری را داشته باشد، باید با خطای زیر رو به رو شود:
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		please login first
 	\end{latin}
-\end{itemize}
+\end{mybox}
+\newpage
+ در کل ساختار منوهای ما به شکل زیر است:
+
+\begin{latin}
+	
+	\begin{forest}
+		for tree={grow'=0,folder,draw}
+		[Login
+		[Main
+		[Duel]
+		[Deck]
+		[Scoreboard]
+		[Profile]
+		[Shop]
+		]
+		]
+	\end{forest}
+\end{latin}
+
 دستورات هر منو فقط داخل آن‌ها معتبر است و اگر در منوی مربوطه صدا زده نشوند، 
 باید خطای مناسب چاپ شود.
 
-\subsubsection*{{\titr دستورات مرتبط با کاربر و منو}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent دستورات مرتبط با کاربر و 
+\subsubsection*{{\titr دستورات مرتبط با منو}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent دستورات مرتبط با 
 منو}}
 \vspace{.5cm}
 \textbf{ورود به یک منو:}
@@ -442,9 +506,8 @@ title=#2,#1}
 		menu enter <menu name>
 	\end{latin}
 \end{mybox}
-در صورتی که کاربر در منوی اصلی باشد و وارد منوی \lr{Exit} شود، بازی باید 
-خاتمه یابد.
-\\
+
+
 در صورتی که کاربر داخل یک منوی دیگر باشد باید خطای زیر چاپ شود:
 \\
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
@@ -466,6 +529,7 @@ title=#2,#1}
 و ثبت‌نام بودیم، بازی خاتمه خواهد یافت.
 
 \vspace{.5cm}
+\newpage
 \textbf{منوی فعلی:}
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
@@ -802,7 +866,9 @@ title=#2,#1}
 
 در قسمت‌هایی از بازی لازم است که کارت‌ها را با جزییات کامل نمایش بدهید. نمونه‌ای از آن چه که به عنوان جزییات کامل یک کارت در نظر گرفته می‌شود در زیر آمده است.
 
+\newpage
 \begin{itemize}
+
 	\item کارت هیولا:
 \begin{mybox}[colback=yellow]{نمونه خروجی}
 	\begin{latin}	
@@ -846,6 +912,18 @@ title=#2,#1}
 \end{itemize}
 
 
+برای نمایش مشخصات کارت‌ها از دستور زیر استفاده می‌کنیم:
+\begin{mybox}[colback=yellow]{نمونه خروجی}
+	\begin{latin}	
+		\begin{verbatim}
+			card show <card name>
+		\end{verbatim}
+	\end{latin}
+\end{mybox}	
+
+و در فروشگاه، دک و بازی می‌توانیم از این دستور استفاده کنیم.
+
+
 
 
 \subsection*{{\titr دک و دسته‌کارت‌ها}}
@@ -864,10 +942,8 @@ title=#2,#1}
 Deck})}}
 دک اصلی شامل حداقل ۴۰ کارت و حداکثر ۶۰ کارت است. 
 \\
-از هر کارت تنها ۳ عدد می‌تواند در یک دک باشد و بعد از اضافه شدن آن کارت به 
-دک، آن کارت از موجودی کارت‌های بازیکن حذف می‌شود، به عبارتی اگر بخواهید از یک 
-کارت در چند دک استفاده کنید، باید به تعدادی که از آن کارت در دک می‌خواهید 
-قرار دهید، در موجودی خود کارت داشته باشید.
+از هر کارت تنها ۳ عدد می‌تواند در یک دک باشد. 
+
 
 \subsubsection*{{\titr دک فرعی (\lr{Side Deck})}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent دک فرعی (\lr{Side 
@@ -1114,6 +1190,27 @@ Deck})}}
 	\end{latin}
 \end{mybox}
 دقت شود که در هر قسمت ترتیب کارت‌ها بر اساس ترتیب الفبایی نامشان است.
+\\
+\textbf{نمایش همه کارت‌ها:}
+
+با دستور زیر، لیست تمامی کارت‌هایی که کاربر خریداری کرده است، نمایش داده می‌شود:
+
+\begin{mybox}[colback=yellow]{دستور}
+	\begin{latin}	
+		deck show -{}-cards
+	\end{latin}
+\end{mybox}
+و نمایش کارت‌ها به فرمت زیر و هر کارت در یک خط خواهد بود:
+
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		<card name>:<card description>
+	\end{latin}
+\end{mybox}
+
+و ترتیب نمایش کارت‌ها بر اساس ترتیب الفبایی نام‌هایشان است.
+
+
 
 \subsection*{{\titr فروشگاه}}
 \addcontentsline{toc}{subsection}{{\fehrestContent فروشگاه}}
@@ -1131,7 +1228,7 @@ Deck})}}
 کارت مورد نظر را خریداری کند.
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
-		shop Buy <card name>
+		shop buy <card name>
 	\end{latin}
 \end{mybox}
 اگر کاربر  نام اشتباهی را وارد کرده بود پیغام زیر را چاپ کنید:
@@ -1328,19 +1425,19 @@ Deck})}}
 	\begin{latin}	
 		\begin{Verbatim}[tabsize =4]
 <opponent nickname>:<opponent life point>
-	c	c	c	c	c	c
+    c   c   c   c   c   c  
 DN
-	O	O	H	E	O
-	E	DH	DO	OO	E
-GY						FZ
+    O   O   H   E   O
+    E   DH  DO  OO  E
+GY                     FZ
 
 --------------------------
 
-FZ            			GY
-	OO	DH	DH	DH	E
-	O	O	O	O	H
-						DN
-	c	c	c	c	c	c
+FZ                     GY
+    OO  DH  DH  DH  E
+    O   O   O   O   H
+                       DN
+c   c   c   c   c   c
 <my nickname>:<my life point>
 		\end{Verbatim}
 	\end{latin}
@@ -1439,7 +1536,7 @@ FZ            			GY
 فرد بود پیام زیر چاپ شود:
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
 	\begin{latin}	
-		Invalid selection
+		invalid selection
 	\end{latin}
 \end{mybox}
 در غیر این صورت در دستور \lr{select} اگر در آدرسی که ذکر کردیم کارتی وجود 
@@ -1480,9 +1577,9 @@ FZ            			GY
 \end{mybox}
 چاپ شود.
 
-\subsubsection*{{\titr تغییر فاز های نوبت و دستور \lr{next phase}}}
+\subsubsection*{{\titr تغییر فاز های نوبت و دستور \lr{(Next Phase)}}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent تغییر فاز های نوبت و 
-دستور \lr{next phase}}}
+دستور \lr{(Next Phase)}}}
 همانطور که می دانید بازی از 6 فاز
  \lr{draw phase} ، \lr{standby phase} ، \lr{main phase 1} ، \lr{battle phase} و 
  \lr{main phase 2} و \lr{end phase }
@@ -1491,7 +1588,7 @@ FZ            			GY
     در ابتدا لازم به ذکر است که بعد از ورود به هر فاز جدید پیام زیر چاپ شود:
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
 	\begin{latin}	
-		Phase: <phase name>
+		phase: <phase name>
 	\end{latin}
 \end{mybox}
     در هر فاز که بودیم با دستور \lr{next phase} به فاز بعدی بازی می رویم.
@@ -1637,7 +1734,7 @@ FZ            			GY
     بعد از اجرای دستور
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
-		Set
+		set
 	\end{latin}
 \end{mybox}
 اگر کارتی انتخاب نشده باشد و کارت انتخاب شده (\lr{selected}) نداشته باشیم 
@@ -1686,10 +1783,9 @@ FZ            			GY
 \end{mybox}
 را نمایش دهید.
 
-\subsubsection*{{\titr تغییر حالت حمله ای به دفاعی یک هیولا و برعکس 
-(\lr{change monster card position})}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent تغییر حالت حمله ای به 
-دفاعی یک هیولا و برعکس (\lr{change monster card position})}}
+\subsubsection*{{\titr تغییر حالت کارت هیولا
+}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent تغییر حالت کارت هیولا }}
     با دستور
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
@@ -1743,7 +1839,7 @@ FZ            			GY
 	\end{latin}
 \end{mybox}
 
-\subsubsection*{{\titr احضار چرخشی(\lr{flip summon})}}
+\subsubsection*{{\titr احضار چرخشی(\lr{Flip Summon})}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent احضار چرخشی(\lr{flip 
 summon})}}
 این نوع احضار فقط برای چرخش کارت‌هایی که به صورت \lr{DH} بر روی
@@ -1789,11 +1885,10 @@ summon})}}
 	\end{latin}
 \end{mybox}
 
-\subsubsection*{{\titr حمله کردن یک کارت هیولا به یک هیولا ی دشمن (\lr{attack 
-monster})
+\subsubsection*{{\titr حمله کردن یک کارت هیولا به یک هیولا ی دشمن 
 }}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent حمله کردن یک کارت هیولا 
-به یک هیولا ی دشمن (\lr{attack monster})
+به یک هیولا ی دشمن
 }}
     با دستور
 \begin{mybox}[colback=yellow]{دستور}
@@ -1926,10 +2021,10 @@ monster})
 	چاپ می‌شود.
 \end{itemize}
 
-\subsubsection*{{\titr حمله کردن مستقیم یک کارت هیولا به دشمن (\lr{direct 
-attack})}}
+\subsubsection*{{\titr حمله کردن مستقیم یک کارت هیولا به دشمن (\lr{Direct 
+Attack})}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent حمله کردن مستقیم یک کارت 
-هیولا به دشمن \lr{(direct attack})}}
+هیولا به دشمن \lr{(Direct Attack})}}
 با دستور
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
@@ -1976,9 +2071,9 @@ attack})}}
 \end{mybox}
 نمایش داده می‌شود.
 
-\subsubsection*{{\titr فعال کردن یک کارت جادو(\lr{activate a spell card})}}
+\subsubsection*{{\titr فعال کردن یک کارت جادو (\lr{Activate a spell card})}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent فعال کردن یک کارت 
-جادو(\lr{activate a spell card})}}
+جادو(\lr{Activate a spell card})}}
 با دستور
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
@@ -1999,7 +2094,7 @@ attack})}}
 و در غیر این صورت اگر کارتی که انتخاب شده است \lr{spell} نباشد پیام
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
 	\begin{latin}	
-		Activate effect is only for spell cards.	
+		activate effect is only for spell cards.	
 	\end{latin}
 \end{mybox}
 نمایش داده شود و در صورتی که در فاز اصلی یا همان \lr{main phase} نباشد پیام
@@ -2047,9 +2142,9 @@ attack})}}
 (در مورد چگونگی اعمال \lr{spell} ها و پیام مربوط به کاری که انجام دادند بعدا 
 گفته می‌شود)
 
-\subsubsection*{{\titr به کمین گذاشتن یک جادو (\lr{set a spell}):}}
+\subsubsection*{{\titr به کمین گذاشتن یک جادو (\lr{Set a spell})}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent به کمین گذاشتن یک جادو 
-(\lr{set a spell})}}
+(\lr{Set a spell})}}
 با دستور 
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
@@ -2193,8 +2288,8 @@ attack})}}
 \end{mybox}
 چاپ شود.
 
-\subsubsection*{{\titr احضار آیینی:/ (\lr{Ritual Summon})}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent احضار آیینی:/ (\lr{Ritual 
+\subsubsection*{{\titr احضار آیینی (\lr{Ritual Summon})}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent احضار آیینی: (\lr{Ritual 
 Summon})}}
 در ابتدا به این نکته اشاره کنم که هنگام فعال کردن یک \lr{ritual spell} اگر 
 هیچ \lr{ritual} کارتی در دست برای وارد کردن به بازی وجود نداشت یا مجموع 
@@ -2263,9 +2358,9 @@ Summon})}}
 \end{mybox}
 نوشته شود.
 
-\subsubsection*{{\titr نشان دادن گورستان(\lr{show graveyard})}}
+\subsubsection*{{\titr نشان دادن گورستان}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent نشان دادن 
-گورستان(\lr{show graveyard})}}
+گورستان}}
 با دستور 
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
@@ -2276,8 +2371,8 @@ Summon})}}
 صورت زیر است:
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
 	\begin{latin}	
-		1. card name: <cardname>\\
-		2. card name: <cardname>\\
+		1.  <card name>:<card description>\\
+		2. <card name>:<card description>\\
 		...
 	\end{latin}
 \end{mybox}
@@ -2296,44 +2391,33 @@ Summon})}}
 \end{mybox}
 به بازی باز می‌گردیم.
 
-\subsubsection*{{\titr نمایش یک کارت(\lr{view a card})}}
-\addcontentsline{toc}{subsubsection}{{\fehrestContent نمایش یک کارت(\lr{view a 
-card})}}
+\subsubsection*{{\titr نمایش کارت‌ها}}
+\addcontentsline{toc}{subsubsection}{{\fehrestContent نمایش  کارت‌ها}}
 با دستور 
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
-		view <selected/number>
+		card show -{}-selected
 	\end{latin}
 \end{mybox}
-    در صورتی که گزینه‌ی \lr{selected} انتخاب شود اگر کارتی \lr{select} نشده 
+در صورتی که کارتی انتخاب شده بود اطلاعات آن کارت که در بخش  های قبل گیم‌پلی گفتیم به همان فرمت نمایش داده شود.   اگر کارتی \lr{select} نشده 
     بود پیام
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
 	\begin{latin}	
 		no card is selected yet
 	\end{latin}
 \end{mybox}
-نمایش داده شود و در صورتی که کارتی انتخاب شده بود اطلاعات آن کارت که در بخش 
-های قبل گیم‌پلی گفتیم به همان فرمت نمایش داده شود.
+نمایش داده شود.
+
+در صورتی که کارت انتخاب شده، کارت حریف بود و به پشت قرار داشت پیام
+ 
+ 
+ \begin{mybox}[colback=yellow]{پیغام به کاربر}
+ 	\begin{latin}	
+ 	card is not visible
+ 	\end{latin}
+ \end{mybox}
+نمایش داده شود.
 \\
-و اگر درون دستور \lr{show graveyard} بودیم و آن لیست را نشان می‌دادیم با 
-انتخاب شماره‌ی آن کارت در لیست اطلاعات آن کارت نمایش داده می‌شود. برای 
-کارتهای 
-\lr{graveyard} دستور \lr{select} نداریم و فقط امکان \lr{view} کردن آن‌ها وجود 
-دارد. ضمنا تنها زمانی می‌توان از این دستور استفاده کرد که در وضعیت \lr{show} 
-باشیم و هرجای دیگری \lr{view <number>} آمد پیام   
-\begin{mybox}[colback=yellow]{پیغام به کاربر}
-	\begin{latin}	
-		invalid command 
-	\end{latin}
-\end{mybox}
-نمایش داده می‌شود. همچنین اگر این دستور معتبر بود ولی شماره داده شده معتبر 
-نبود پیام
-\begin{mybox}[colback=yellow]{پیغام به کاربر}
-	\begin{latin}	
-	    invalid number	
-	\end{latin}
-\end{mybox}
-نمایش داده می‌شود. در صورت درست بودن اطلاعات کارت نمایش داده شود.
 
 
 \subsubsection*{{\titr زنجیر (\lr{Chain})}}
@@ -2453,25 +2537,25 @@ card})}}
 افزایش پول به مقدار دلخواه:
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
-		increase money  [Money] -{}-force
+		increase -{}-money <amount>
 	\end{latin}
 \end{mybox}
-انتخاب کارت اضافه تر از حد مجاز:
+انتخاب کارت اضافه‌تر از حد مجاز:
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
-		use card [card name] -{}-force
+		select -{}-hand <card-name> -{}-force
 	\end{latin}
 \end{mybox}
     افزایش جان در هنگام بازی:
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
-		increase LP [amount] -{}-force
+		increase -{}-LP <amount>
 	\end{latin}
 \end{mybox}
     بردن بازی:
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
-		win game -{}-force
+	duel set-winner <nickname>
 	\end{latin}
 \end{mybox}
 شما نیز می‌توانید به سلیقه خودتان دستورات تقلب‌های دیگری مانند، از بین بردن 
@@ -2493,8 +2577,8 @@ card})}}
 اکسپورت کردن کارت:
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
-	export card [card name]
-	
+		export card [card name]
+		
 	\end{latin}
 \end{mybox}
 
