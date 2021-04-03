@@ -628,7 +628,7 @@ title=#2,#1}
 نادرست بودن رمز فعلی:
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
 	\begin{latin}	
-		Current password is invalid
+		current password is invalid
 	\end{latin}
 \end{mybox}
 یکی بودن رمز قدیم و جدید:
@@ -1022,7 +1022,7 @@ Deck})}}
 		-{}-side(optional)
 	\end{latin}
 \end{mybox}
-توجه کنید که تنها برای حذف کردن کارت از side deck از پرچم side-{}- استفاده 
+توجه کنید که تنها برای حذف کردن کارت از \lr{side deck} از پرچم \lr{-{}-side} استفاده 
 می‌کنیم.
 \\
 توجه: زمانی که یک کارت از دک حذف می‌شود، به موجودی کارت‌های بازیکن برمی‌گردد.
@@ -1061,7 +1061,7 @@ Deck})}}
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
 	\begin{latin}	
 		<deck name>: main deck <number of main deck cards>, side deck <number 
-		of side deck cards>, <valid/not valid>
+		of side deck cards>, <valid/invalid>
 	\end{latin}
 \end{mybox}
 به طور مثال:
@@ -1100,7 +1100,7 @@ Deck})}}
 		deck show -{}-deck-name <deck name> -{}-side(Opt)
 	\end{latin}
 \end{mybox}
-توجه: برای نمایش دک فرعی از پرچم \lr{side-{}-} استفاده می‌کنیم.
+توجه: برای نمایش دک فرعی از پرچم \lr{-{}-side}  استفاده می‌کنیم.
 \\
 خروجی:
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
@@ -1137,13 +1137,13 @@ Deck})}}
 اگر کاربر  نام اشتباهی را وارد کرده بود پیغام زیر را چاپ کنید:
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
 	\begin{latin}	
-		There is no card with this name
+		there is no card with this name
 	\end{latin}
 \end{mybox}
 اگر کاربر سکه کافی برای خرید کارت را نداشت پیغام زیر را چاپ کنید:
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
 	\begin{latin}	
-		Not enough money
+		not enough money
 	\end{latin}
 \end{mybox}
 توجه داشته باشید که هیچ محدودیتی در خرید تعداد زیادی کارت یکسان ندارید.
@@ -1174,7 +1174,7 @@ Deck})}}
     در صورتی که بازیکن \lr{player 2} وجود نداشت پیام
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
 	\begin{latin}	
-		There is no player with this username
+		there is no player with this username
 	\end{latin}
 \end{mybox}
     چاپ شود و در صورتی که هر یک از بازیکنان دک فعال نداشتند پیغام خطای زیر 
@@ -1193,6 +1193,17 @@ Deck})}}
 		<username>’s deck is invalid
 	\end{latin}
 \end{mybox}
+همچنین اگر تعداد جلوی 
+\lr{-{}-rounds}
+برابر $1$ یا $3$ نبود پیغام:
+
+\begin{mybox}[colback=yellow]{پیغام به کاربر}
+	\begin{latin}	
+		number of rounds is not supported
+	\end{latin}
+\end{mybox}
+را نمایش بدهد.
+
     بعد از این دستور در صورت عدم وجود خطا بازی ای با \lr{deck} فعال هر 
     بازیکن ساخته میشود و وارد بازی می‌شویم.
 \subsubsection*{{\titr نمایش صفحه بازی}}
@@ -1220,7 +1231,7 @@ Deck})}}
 \begin{itemize}
 	\item گورستان کارت ها(\lr{graveyard}):
 	\\
-	با عبارت \lr{graveyard} به \lr{graveyard} خود و \lr{graveyard --opponent} 
+	با عبارت \lr{graveyard} به \lr{graveyard} خود و \lr{graveyard -{}-opponent} 
 	به \lr{graveyard} حریف اشاره کند.
 	\item قسمت کارت های هیولا(\lr{monster card zone}):
 	\\
@@ -1312,28 +1323,29 @@ Deck})}}
 مثال و را توضیح می‌دهیم.
 \\
 برد بازی بعد از اتمام هر عملیات به شکل زیر نمایش داده می‌شود: معنای هر یک از نمادهای اختصاری در ادامه آورده شده است.
+
 \begin{mybox}[colback=yellow]{پیغام به کاربر}
 	\begin{latin}	
-		\begin{verbatim}
-			
-			<opponent nickname>: <opponent life points>
-			C C C 
-			DN								
-			O	O	H	O	E
-			E	DH	DO	OO	E
-			GY						FZ
-			---------------------------
-			FZ						GY
-			OO	DH	DH	DH	E
-			O	O	O	O	H
-			DN
-			C C C 
-			<my nickname> : <my life point>		
-			
-			
-		\end{verbatim}
+		\begin{Verbatim}[tabsize =4]
+<opponent nickname>:<opponent life point>
+	c	c	c	c	c	c
+DN
+	O	O	H	E	O
+	E	DH	DO	OO	E
+GY						FZ
+
+--------------------------
+
+FZ            			GY
+	OO	DH	DH	DH	E
+	O	O	O	O	H
+						DN
+	c	c	c	c	c	c
+<my nickname>:<my life point>
+		\end{Verbatim}
 	\end{latin}
 \end{mybox}
+
 
 در عبارت بالا C‌ های هر یک از طرفین باید به تعداد کارت‌هایی باشد که در دست دارند.
 
