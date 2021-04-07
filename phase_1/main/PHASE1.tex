@@ -1128,7 +1128,7 @@ Deck})}}
 در ابتدا از منوی اصلی باید به منوی بازی برویم با دستور
 \begin{mybox}[colback=yellow]{دستور}
 	\begin{latin}	
-		duel new -{}-second-player <player2 username> -{}-rounds <1/3>
+		duel -{}-new -{}-second-player <player2 username> -{}-rounds <1/3>
 	\end{latin}
 \end{mybox}
     در صورتی که بازیکن \lr{player 2} وجود نداشت پیام
@@ -1166,6 +1166,15 @@ Deck})}}
 
     بعد از این دستور در صورت عدم وجود خطا بازی ای با \lr{deck} فعال هر 
     بازیکن ساخته می‌شود و وارد بازی می‌شویم.
+    
+    همچنین توجه کنید برای انجام بازی با هوش مصنوعی، دستور را به این شکل وارد می‌کنیم:
+    
+    \begin{mybox}[colback=yellow]{دستور}
+    	\begin{latin}	
+    		duel -{}-new -{}-ai -{}-rounds <1/3>
+    	\end{latin}
+    \end{mybox}
+    
 \subsubsection*{{\titr نمایش صفحه بازی}}
 \addcontentsline{toc}{subsubsection}{{\fehrestContent نمایش صفحه بازی}}
 بعد از انجام هر دستوری و هر حرکتی وقتی به منوی اصلی بازی رفتیم باید برد 
